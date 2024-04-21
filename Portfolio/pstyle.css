@@ -42,7 +42,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    height: 8%;
+    height: 9%;
     padding: 1rem 9%;
     background: var(--header);
     display: flex;
@@ -60,7 +60,7 @@ header{
 
 .logo{
     font-size: 220%;
-    color: #9000ff;
+    color: #e1c3f8;
     font-weight: 500;
     cursor: default;
     text-shadow: 0 0 0.1rem #9000ff;
@@ -96,6 +96,7 @@ a{
 @media screen and (max-width: 850px){
     .hider{
         display: inline;
+        color: #fcf9fe;
     }
     .logo{
         font-size: 150%;
@@ -125,7 +126,7 @@ a{
         padding: 8px;
         text-decoration: none;
         font-size: 36px;
-        color: #9000ff;
+        color: #c6b8d0;
         display: block;
         transition: 0.3s;
       }
@@ -251,6 +252,7 @@ span{
     .myimg{
         float: none;
         margin-left: 15vw;
+        margin-top: -80px;
         width: 55vw;
         height: 55vw;
     }
