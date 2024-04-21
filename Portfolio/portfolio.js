@@ -11,6 +11,9 @@ function active() {
     });
     // document.getElementById("nav").style.height = "0%";
 }
+$(window).bind('keydown', 'ctrl+s', function () {
+  $('#save').click(); return false;
+});
 DisableDevtool({
   ondevtoolopen: (type) => {
     if(DisableDevtool.isRunning){console.log("Copyright restrictions are in effect."); window.location.href="error.html";}
