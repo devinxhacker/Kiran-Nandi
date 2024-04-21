@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Kiran Nandi - Projects
+    </title>
+    <!-- <script src="security.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kiran Nandi - Portfolio">
+    <meta name="keywords"
+        content="portfolio, html, css, javascript, programming, coding, web development, programming languages, web development languages">
+    <meta name="author" content="Kiran Nandi">
+    <meta name="copyright" content="Kiran Nandi">
+    <meta name="theme-color" content="#000000">
+    <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Portfolio">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="pstyle.css">
+    <style>
+        .project_holder {
+            justify-content: center;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 1rem;
+            gap: 15px;
+        }
+
+        .project_card {
+            display: flexbox;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(25deg, var(--primary), var(--secondary));
+            border-radius: 15px 50px;
+            /* padding: 30px 20px; */
+            width: 300px;
+            height: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            transition: .4s linear;
+        }
+
+        .project_card:hover {
+            box-shadow: 0 10px 15px #000000;
+            transform: scale(1.03);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body align="center" onload="active()">
+    <script src="portfolio.js"></script>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <span style="font-size:25px;cursor:pointer;color:#8c00ff;padding:5px 10px 5px 10px;border-radius: 100%;"
+            class="hider" onclick="openNav()">&#9776;</span>
+        <nav class="overlay" id="nav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a id="dev" href="portfolio.html#home" onclick="active()">Home</a>
+                <a href="portfolio.html#about" onclick="active()">About</a>
+                <a href="portfolio.html#skills" onclick="active()">Skills</a>
+                <a href="portfolio.html#projects" class="active" onclick="active()">Projects</a>
+                <a href="portfolio.html#contact" onclick="active()">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <script>
+        function openNav() {
+            document.getElementById("nav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("nav").style.height = "0%";
+        }
+    </script>
+    <main>
+        <section id="">
+            <h1>My Projects</h1>
+            <br>
+            <div class="project_holder">
+                <div class="project_card" id="pr-portfolio">
+                    <div class="layer">
+                        <h4>Web Portfolio</h4>
+                        <p>Created a Web Portfolio using HTML, CSS and JS.</p>
+                        <a href="portfolio.html"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a> 
+                    </div>
+                    <div class="stat" id="stat" style="background-color: rgba(242, 119, 119, 0.612);">Live</div>
+                </div>
+                <div class="project_card" id="pr-todo">
+                    <div class="layer">
+                        <h4>Todo App</h4>
+                        <p>Created a Todo app - "My Tasks" with Kotlin in Android Studio</p>
+                        <a href="https://github.com/kirannandi896/MyTasks" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                    </div>
+                    <div class="stat" id="stat">Done</div>
+                </div>
+                <div class="project_card" id="pr-calc">
+                    <div class="layer">
+                        <h4>Calculator</h4>
+                        <p>Created a simple calculator using HTML, CSS and JS.</p>
+                        <a href="https://kirannandi896.github.io/calculator/" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                    </div>
+                    <div class="stat" id="stat">Done</div>
+                </div>
+                <div class="project_card" id="pr-disaref">
+                    <div class="layer">
+                        <h4>DisaRelief</h4>
+                        <p>Created a Disaster Management website as GDSC Nirman project.</p>
+                        <a href="https://bit.ly/disarelief" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a> 
+                    </div>
+                    <div class="stat" id="stat">Done</div>
+                </div>
+                <div class="project_card" id="pr-chemeasy">
+                    <div class="layer">
+                        <h4>ChemEasy</h4>
+                        <p>Created a website as a SON course project.</p>
+                        <a href="https://bit.ly/chemeasy" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                    </div>
+                    <div class="stat" id="stat" style="background-color: rgba(242, 232, 99, 0.684);">In
+                        Progress</div>
+                </div>
+                <div class="project_card" id="pr-dnapp">
+                    <div class="layer">
+                        <h4>Day-Night Flash App</h4>
+                        <p>Created a Day-Night Flashlight App using Kotlin in Android Studio.</p>
+                        <a href="https://github.com/kirannandi896/Day_Night_Flash_App" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                    </div>
+                    <div class="stat" id="stat">Done</div>
+                </div>
+                <div class="project_card" id="pr-peritab">
+                    <div class="layer">
+                        <h4>Periodic Table</h4>
+                        <p>Created a Periodic Table using HTML and CSS</p>
+                        <a href="https://kirannandi896.github.io/Periodic_table/" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                    </div>
+                    <div class="stat" id="stat">Done</div>
+                </div>
+                <div class="project_card" id="pr-pykbc">
+                    <div class="layer">
+                        <h4>Py-KBC</h4>
+                        <p>Created a KBC Game using Python</p>
+                        <a href="https://github.com/kirannandi896/Py-KBC" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                    </div>
+                    <div class="stat" id="stat">Done</div>
+                </div>
+                <!-- <div class="project_card" id="pr-fyasist">
+                    <br><br>
+                    <h1>FY Assistant</h1>
+                    <h1>Comming Soon...</h1>
+                </div> -->
+            </div>
+        </section>
+
+        <a style="position:fixed;top:50%;left:2%" href="#" onclick="window.history.back()" class="btn"><i
+                name="see more" class="fa fa-arrow-left"></i></a>
+    </main>
+
+
+
+
+    <style>
+        @media only screen and (max-width: 830px) {
+
+            .project_card{
+                width: 100%;
+            }
+
+            .project_card:hover .layer {
+                width: 500px;
+            }
+
+            .project_holder {
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
+        }
+
+        .layer{
+            position: relative;
+            top: 0px;
+            left: 0px;
+            font-size: 0%;
+            border-radius: 15px 50px;
+            /* z-index: -3; */
+            width: 0%;
+            height: 0;
+            background: linear-gradient(rgba(3, 1, 30, 0.662), #012710a0);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            /* transform: translateX(100%); */
+        }
+
+        .project_card:hover .layer {
+            font-size: 1rem;
+            width: 100%;
+            height: 200px;
+            /* transform: translateX(0); */
+            transition: 0.2s ease-in-out;
+        }
+
+
+        .stat {
+            font-size: 70%;
+            position: static;
+            bottom: 0px;
+            right: 0;
+            float: right;
+            color: white;
+            background-color: #75b1f999;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+            text-shadow: 0.5px 0.5px 1.2px black;
+        }
+
+        #pr-portfolio {
+            background: url(myport.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-portfolio:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-todo {
+            background: url(myapp.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-todo:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-calc {
+            background: url(mycalci.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-calc:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-disaref {
+            background: url(disarelief.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-disaref:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-chemeasy {
+            background: url(chemeasy.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-chemeasy:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-dnapp {
+            background: url(dnapp.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-dnapp:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-peritab {
+            background: url(periodic_table.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-peritab:hover {
+            filter: brightness(1);
+        }
+
+
+        #pr-pykbc {
+            background: url(pykbc.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #pr-pykbc:hover {
+            filter: brightness(1);
+        }
+
+
+        /* #pr-fyasist {
+            color:#8c00ff;
+            background-size: cover;
+            background-position: center;
+        }
+        #pr-fyasist:hover {
+            filter: brightness(1);
+        } */
+    </style>
+
+    <footer class="footer" id="footer">
+                
+        <div class="footer-txt">
+            <p>&copy; 2024 - Kiran Nandi | All Rights Reserved.</p>
+        </div>      
+    </footer>
+    
+    <div class="foot">
+        <div class="layer1">
+            <div class="layer2">
+                <div class="layer3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

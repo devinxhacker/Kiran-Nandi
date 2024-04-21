@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Kiran Nandi - Portfolio
+        </title>
+        <!-- <script src="security.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Kiran Nandi - Portfolio">
+        <meta name="keywords" content="portfolio, html, css, javascript, programming, coding, web development, programming languages, web development languages">
+        <meta name="author" content="Kiran Nandi">
+        <meta name="copyright" content="Kiran Nandi">
+        <meta name="theme-color" content="#000000">
+        <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Portfolio">
+        <meta name="msapplication-TileColor" content="#000000">
+        <link rel="icon" type="image/png" href="logo.png">
+        <link rel="stylesheet" href="pstyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body align="center" onload="active()">
+        <script src="portfolio.js"></script>
+        <header class="header">
+            <a href="#" class="logo">Portfolio</a>
+            <span style="font-size:25px;cursor:pointer;color:#8c00ff;padding:5px 10px 5px 10px;border-radius: 100%;" class="hider" onclick="openNav()">&#9776;</span>
+            <nav class="overlay" id="nav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a id="dev" href="#home" class="active" onclick="active()">Home</a>
+                    <a href="#about" onclick="active()">About</a>
+                    <a href="#skills" onclick="active()">Skills</a>
+                    <a href="#projects" onclick="active()">Projects</a>
+                    <a href="#contact" onclick="active()">Contact</a>
+                    <a id="danger" href="#danger-zone" onclick="active()" style="display:none">Insights</a>
+                </div>
+            </nav>
+            <script>
+                click = 0;
+                function handleClick() {
+                clickCount++;
+                if (clickCount === 6) {
+                    alert("You are not in developer mode!");
+                    document.getElementById("danger-zone").style.display = "none";
+                    document.getElementById("uparr").style.display = "inline";
+                    document.getElementById("danger").style.display = "none";
+                    clickCount = 0;
+                }
+            }
+
+            document.getElementById("danger").addEventListener("click", handleClick);
+            </script>
+        </header>
+        <script>
+            function openNav() {
+              document.getElementById("nav").style.height = "100%";
+            }
+            
+            function closeNav() {
+              document.getElementById("nav").style.height = "0%";
+            }
+        </script>
+
+
+        <section class="home" id="home">
+            <div class="myimg">
+                <img src="image.png" alt="My Image">
+            </div>
+            <div class="h-cont">
+                <h3><span>Hello,</span> It's Me</h3>
+                <h1>Kiran Nandi</h1>
+                <h3>And I am a <span id="job">First Year College Student</span></h3>
+                <p>
+                    I am now <span>Learning</span> how to build <span>Beautiful Websites.</span>
+                </p>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/kiran-nandi-76a003288/" target="_blank" id="linkedin"><img src="linkedin.png" alt="Linkedin"></a>
+                    <a href="https://github.com/kirannandi896" target="_blank" id="github"><img src="github.png" alt="Github"></a>
+                    <a href="https://www.codechef.com/users/kirannandi_896" target="_blank" id="codechef"><img src="codechef.png" alt="Codechef"></a>
+                    <a href="https://www.instagram.com/kirannandi896/" target="_blank" id="instagram"><img src="insta.png" alt="Instagram"></a>
+                </div>
+                <!--Download CV-->
+                <a href="#" class="btn" id="cv">Download CV</a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="ab-cont">
+                <center>
+                <h2 style="text-align: center;" class="heading">About <span id="ab-me">Me</span></h2>
+                <div class="ab-img" id="ab-img">
+                    <img src="image.png" alt="My Image">
+                </div>
+                </center>
+                <div class="about-content-text">
+                    <h3>Computer Engineer Student</h3>
+                    <p>Hey, I am now in First Year at MIT Acaedemy of Engineering, Alandi, Pune, having a deep interest in Web Development, Data Structure, Algorithm and Python programming. And I am also very much interested in Android App Development too. I'm on a journey of exploration and learning, always eager to expand my knowledge in the tech world. I currently serve as a CodeChef Technical Team member at my campus and having 1-star rated in Codechef.</p>
+                    <a href="aboutme.html" class="btn">Know more</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2 class="heading">My <span>Skills</span></h2>
+
+            <div class="sk-cont">
+                <div class="sk-box">
+                    <img src="python.png" alt="Python Image" class="sk-img">
+                    <br><br><h3>Python</h3>
+                    <p>Quite good at Python programming language <br></p>
+                    <a href="https://www.linkedin.com/posts/kiran-nandi-76a003288_basics-of-python-programming-for-absolute-activity-7122619457339846656-HCJg?utm_source=share&utm_medium=member_desktop" class="btn" target="_blank">Certificate</a>
+                </div>
+
+                <div class="sk-box">
+                    <img src="linux.png" alt="Linux Image" class="sk-img">
+                    <h3>Linux Skills</h3>
+                    <p>I am also quite comfortable with Linux Terminal.</p>
+                    <a href="https://www.linkedin.com/posts/kiran-nandi-76a003288_kiran-arun-nandi-has-successfully-completed-activity-7127688413574520833-27Hj?utm_source=share&utm_medium=member_desktop" class="btn" target="_blank">Certificate</a>
+                </div>
+
+                <div class="sk-box">
+                    <img src="web.png" alt="Web Image" style="width:17vw" class="sk-img">
+                    <h3>Web Development</h3>
+                    <p>Having basic knowledge of HTML, CSS and JavaScript.</p>
+                    <a href="https://www.linkedin.com/posts/kiran-nandi-76a003288_sertifier-digitalbadge-digitalcertificate-activity-7097610026835402752-36u9?utm_source=share&utm_medium=member_desktop" class="btn" target="_blank">Certificate</a>
+                </div>
+
+                <div class="sk-box">
+                    <img src="android.png" style="height:30%;width:30%" alt="Android Image" class="sk-img">
+                    <h3>Android App Development</h3>
+                    <p>Very much comfortable with Andriod Studio and aspiring for having future in Android Development and many more.</p>
+                    <a href="https://www.linkedin.com/posts/kiran-nandi-76a003288_teachnook-androidappdevelopment-androiddevelopment-activity-7151507197993066496-Gops?utm_source=share&utm_medium=member_desktop" class="btn" target="_blank">Certificate</a>
+                </div>
+
+                <div class="sk-box">
+                    <img src="jscript.webp" style="height:30%;width:30%" alt="Android Image" class="sk-img">
+                    <h3>JavaScript</h3>
+                    <p>Knows JavaScript very well.</p>
+                    <a href="https://www.codechef.com/certificates/public/1e4e306" target="_blank" class="btn">Certificate</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <h2 class="heading">Latest <spam>Projects</spam></h2>
+
+            <div class="pr-cont">
+                <div class="pr-box">
+                    <img src="myport.png" alt="Portfolio project Image">
+                    <div class="pr-layer">
+                        <h4>Web Portfolio</h4>
+                        <p>Created a Web Portfolio using HTML, CSS and JS.</p>
+                        <a href="portfolio.html"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a> 
+                    </div>         
+                </div>
+
+            <div class="pr-cont">
+                <div class="pr-box">
+                    <img style="filter: brightness(0.7)" src="myapp.jpg" alt="Portfolio project Image">
+                    <div class="pr-layer">
+                        <font color="white">
+                        <h4>Todo App</h4>
+                        <p>Created a Todo app - "My Tasks" with Kotlin in Android Studio</p></font>
+                        <a href="https://github.com/kirannandi896/MyTasks" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a>
+                        </div>
+                </div>
+            
+            <div class="pr-cont">
+                <div class="pr-box">
+                    <img src="disarelief.png" alt="Portfolio project Image">
+                    <div class="pr-layer">
+                        <h4>DisaRelief</h4>
+                        <p>Created a Disaster Management website.</p>
+                        <a href="https://bit.ly/disarelief" target="_blank"><i name="visit" class="fa fa-arrow-right" style="font-size: 100%;color:white"></i></a> 
+                    </div>          
+                </div>
+            </div>
+            <a style="display:block" href="projects.html" class="btn"><i name="see more" class="fa fa-arrow-right"></i></a>
+            <br>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me</span></h2>
+      
+            <form name="f1" class="form" action="https://formspree.io/f/xoqgnqwp"
+            method="POST">
+              <div class="input-box">
+                <input type="text" name="name" class="name" placeholder="Full Name" required>
+                <input type="email" name="email" class="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email Address" required>
+              </div>
+              <div class="input-box">
+                <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}" class="phone"  name="phone" required>
+                <input type="text" placeholder="Contact Subject" name="subject" class="subject" required>
+              </div>
+              <textarea name="message" class="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+              <input type="submit" value="Send Message" name="submit" class="btn">
+            </form>
+            <!-- <script src="data.js"></script> -->
+          </section>
+
+          <section class="danger-zone" id="danger-zone" style="display:none">
+            <h2 class="heading">Insights</h2><br><br><br>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-c854d51f-1a81-4064-8a8e-1d4a8f14a1ae" data-elfsight-app-lazy></div>
+          </section>
+          <section>
+          <img src="logo.png" class="icon" alt="Logo">
+          <div class="social" id="end">
+            <a href="https://www.linkedin.com/in/kiran-nandi-76a003288/" target="_blank" id="linkedin"><img src="linkedin3.png" alt="Linkedin"></a>
+            <a href="https://twitter.com/kirannandi896" target="_blank" id="github"><img src="twiter.png" alt="Twitter"></a>
+            <a href="https://wa.me/+918530431501" target="_blank" id="codechef"><img src="whatsapp3.png" alt="Codechef"></a>
+            <a href="https://www.instagram.com/kirannandi896/" target="_blank" id="instagram"><img src="insta3.png" alt="Instagram"></a>
+        </div>
+          </section>
+
+          <footer class="footer" id="footer">
+            
+            <div class="footer-txt">
+                <p>&copy; 2024 - Kiran Nandi | All Rights Reserved.</p>
+              </div>
+        
+            <div class="uparr" id="uparr">
+                <a href="#home"><img src="uarrow.png" class="uppr" alt="home"></a>
+            </div>       
+          </footer>
+          <div class="foot">
+            <div class="layer1">
+                <div class="layer2">
+                    <div class="layer3"></div>
+                </div>
+            </div>
+        </div>
+
+
+          <script>
+            var clickCount = 0;
+            function handleClick() {
+                clickCount++;
+                if (clickCount === 6) {
+                    alert("You are in developer mode!");
+                    document.getElementById("danger-zone").style.display = "block";
+                    document.getElementById("uparr").style.display = "none";
+                    document.getElementById("danger").style.display = "inline";
+                    clickCount = 0;
+                }
+            }
+
+            document.getElementById("uparr").addEventListener("click", handleClick);
+          </script>
+    </body>
+</html>

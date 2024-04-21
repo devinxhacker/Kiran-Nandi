@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Kiran Nandi - About Me
+    </title>
+    <!-- <script src="security.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kiran Nandi - Portfolio">
+    <meta name="keywords"
+        content="portfolio, html, css, javascript, programming, coding, web development, programming languages, web development languages">
+    <meta name="author" content="Kiran Nandi">
+    <meta name="copyright" content="Kiran Nandi">
+    <meta name="theme-color" content="#000000">
+    <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Portfolio">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="pstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body align="center" onload="active()">
+    <script>
+        function openNav() {
+          document.getElementById("nav").style.height = "100%";
+        }
+        
+        function closeNav() {
+          document.getElementById("nav").style.height = "0%";
+        }
+    </script>
+    <script src="portfolio.js"></script>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <span style="font-size:25px;cursor:pointer;color:#8c00ff;padding:5px 10px 5px 10px;border-radius: 100%;"
+            class="hider" onclick="openNav()">&#9776;</span>
+        <nav class="overlay" id="nav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a id="dev" href="portfolio.html#home" onclick="active()">Home</a>
+                <a href="portfolio.html#about" class="active" onclick="active()">About</a>
+                <a href="portfolio.html#skills" onclick="active()">Skills</a>
+                <a href="portfolio.html#projects" onclick="active()">Projects</a>
+                <a href="portfolio.html#contact" onclick="active()">Contact</a>
+            </div>
+        </nav>
+        <style>
+            hr {
+                border: 1px solid #8c00ff;
+                width: 60%;
+                border-radius: 100%;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 50px;
+                margin-top: 50px;
+            }
+        </style>
+    </header>
+    <main>
+        <section>
+            <div class="side-part">
+                <img id="side-img" src="image.png" alt="My Image">
+                <div class="mob-title-viewer">
+                    <h1>KIRAN NANDI</h1>
+                    <p>B-Tech Computer Engineering Student</p>
+                </div><br>
+                <table class="ab-table" id="ab-table" cellspacing="10">
+                    <tr>
+                        <td>
+                            <i class="fa fa-map-marker" style="color:white;font-size: 20px;"></i>
+                        </td>
+                        <td>
+                            <a href="https://maps.app.goo.gl/aU65ybraaa5dxc6s5" target="_blank"><span>Chikhali, Pune<br>411062</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-envelope" style="color:white;font-size: 20px;"></i>
+                        </td>
+                        <td>
+                            <a href="mailto:kirannandi896@gmail" target="_blank"><span>kirannandi896@gmail.com</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-phone" style="color:white;font-size: 20px;"></i>
+                        </td>
+                        <td>
+                            <a href="tel:+918530431501" target="_blank"><span>+91 8530431501</span></a>
+                        </td>
+                    </tr>
+                </table>
+                <hr class="side-hr">
+                <h1>Education</h1><br><br>
+                <div id="side-edu">
+                    <span>B-Tech in Computer Engineering</span><br>
+                    <h3>MIT Acaedemy of Engineering</h3>
+                    <p>2023 - 2027</p>
+                    <br><br>
+                    <span>HSC Education</span><br>
+                    <h3>SNBP Junior College</h3>
+                    <p>2021 - 2023</p>
+                    <br><br>
+                    <span>SSC Education</span><br>
+                    <h3>Abhishek Vidyalayam</h3>
+                    <p>2021</p>
+                </div>
+                <hr class="side-hr">
+                <h1>Languages</h1><br>
+                <div id="side-lang">
+                    <ul>
+                        <li>English</li>
+                        <li>Hindi</li>
+                        <li>Marathi</li>
+                        <li>Bengali</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-part">
+                <div class="desk-title-viewer">
+                    <h1>KIRAN NANDI</h1>
+                    <p>B-Tech Computer Engineering Student</p>
+                    <hr>
+                </div>
+                <br>
+                <h2>OBJECTIVES</h2><br>
+                <p>
+                    To pursue a challenging career in Software Engineering in a reputed organisation which gives me an opportunity to grow professionally and personally.
+                </p>
+                <br><br><br><br>
+                <h2>SKILLS</h2>
+                <table class="t-skills">
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>Verbal Communication</li>
+                                <li>Public Speaking</li>
+                                <li>Problem Solving</li>
+                                <li>Team Work</li>
+                                <li>Positive Attitude</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li style="font-weight: 700; color:#b2d0f9">Programming Skills</li>
+                                <ol>
+                                    <li>Python</li>
+                                    <li>HTML, CSS and JavaScript</li>
+                                    <li>C Programming</li>
+                                    <li>Kotlin</li>
+                                </ol>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <br><br><br><br>
+                <h2>EXPERIENCE</h2><br>
+                <p>Fresher</p>
+                <br><br><br><br>
+                <h2>PERSONAL PROFILE</h2><br>
+                <ul>
+                    <li>Date of Birth: 15 Jan, 2006</li>
+                    <li>Hobbies: Programming, Drawing</li>
+                    <li>Website: <a href="https://bit.ly/kirannandi896"  target="_blank">https://bit.ly/kirannandi896</a></li>
+                </ul>
+                <br><br><br><br>
+                <h2>ACHIEVEMENTS</h2><br>
+                <ul>
+                    <li>
+                        Got 9.05 CGPA in 1st Semester.
+                    </li>
+                    <li>
+                        Got Admission in Computer Engineering at<br>MIT Academy of Engineering.
+                    </li>
+                    <li>
+                        Got A Grade in Maharashtra Intermidiate<br>Drawing Exam.
+                    </li>
+                </ul>
+                <br><br><br><br>
+                <h2>QUALIFICATIONS</h2><br>
+                <ol>
+                    <li>Appearing in FY B-Tech<br>Computer Engineering (2024)</li>
+                    <li>Passed HSC with 88% (2023)</li>
+                    <li>Passed SSC with 96% (2021)</li>
+                </ol>
+                <br><br><br><br>
+                <div class="main-side-right">
+                    <h2>MEMBERSHIPS</h2><br>
+                    <ul>
+                        <li>Member of CodeChef Club - Technical Team<br>MITAOE</li>
+                    </ul>
+                    <br><br><br><br>
+                    <h2>TECHNICAL TRANING</h2><br>
+                    <ul>
+                        <li>
+                            Ongoing Training of Full Stack<br>Web-Development at Udemy.
+                        </li>
+                        <li>
+                            Completed Course of Android App<br>Development at Teachnook.
+                        </li>
+                    </ul>
+                    <br><br><br>
+                    <h2>CERTIFICATIONS</h2><br>
+                    <ul>
+                        <li>
+                            Android App Development - Teachnook
+                        </li>
+                        <li>
+                            Python - Open Weaver
+                        </li>
+                        <li>
+                            Basics of HTML and CSS - Open Weaver
+                        </li>
+                        <li>
+                            JavaScript - CodeChef
+                        </li>
+                        <li>
+                            Linux Fundamentals - Great Learning
+                        </li>
+                    </ul>
+                    <br><br><br><br>
+                    <h2>REFERENCES</h2><br>
+                    <ul>
+                        <li>
+                            Dr. Vaishali Wangikar<br>Dean<br>MIT Acaedemy of Engineering<br>Alandi
+                        </li>
+                        <li>
+                            Kavita Joshi<br>Principal<br>SNBP Junior College<br>Chikhali
+                        </li>
+                    </ul>
+                </div>
+                
+
+            </div>
+
+            <div class="dog">
+                <a href="#" onclick="window.history.back()"><i class="fa fa-arrow-left"></i> Back</a>
+            </div>
+
+        </section>
+
+        <footer class="footer" id="footer">
+            
+            <div class="footer-txt">
+                <p>&copy; 2024 - Kiran Nandi | All Rights Reserved.</p>
+              </div>
+        
+            <div class="uparr" id="uparr">
+                <a href="#"><img src="uarrow.png" class="uppr" alt="home"></a>
+            </div>       
+        </footer>
+        <div class="foot">
+            <div class="layer1">
+                <div class="layer2">
+                    <div class="layer3"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+
+        .mob-title-viewer{
+            display:none;
+        }
+
+        .main-part{
+            text-align: left;
+            margin-left: 27%;
+            margin-top: -5%;
+            /* margin-right: -4vw; */
+            border: 1px dotted rgba(0, 86, 132, 0.333);
+            padding-left: 5%;
+            padding: 5%;
+            border-radius: 10px;
+            background: rgba(1, 102, 255, 0.053);
+        }
+
+        .main-part h1{
+            color: white;
+            font-size: 1.5cm;
+            letter-spacing: 0.1cm;
+        }
+
+        .main-part h2{
+            color: white;
+        }
+
+        .main-part hr{
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .main-side-right{
+            float: right;
+            margin-top: -790px;
+            margin-right: 10%;
+            border-left: 1px dotted rgba(0, 86, 132, 0.333);
+            padding-left: 5vw;
+            padding-top: 7%;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .main-part{
+                margin-left: 30%;
+            }
+            .main-side-right{
+                margin-right: -4%;
+            }
+        }
+
+        .dog{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            float: left;
+            width: 27%;
+            padding-top: 5.45%;
+            padding-bottom: 5.45%;
+            padding-left: 4%;
+            padding-right: 4%;
+            margin-left: -5.5%;
+            margin-top: -12.5%;
+            background-color: rgba(1, 102, 255, 0.053);
+            border: 1px dotted rgba(0, 86, 132, 0.333);
+            border-radius: 20px;
+        }
+
+        .dog a{
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        .t-skills{
+            width: 100%;
+        }
+
+        span{
+            color: white;
+            font-weight: 50;
+        }
+
+        .ab-table{
+            color: white;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        td{
+            padding: 5%;
+        }
+
+        .side-part{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            float: left;
+            background: #5431de22;
+            border-radius: 50px;
+            margin-left: -6%;
+            margin-bottom: 30px;
+            margin-top: -5%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            padding-left: 4%;
+            padding-right: 4%;
+        }
+        .side-part img{
+            width:200px;
+            border: 2px solid whitesmoke;
+        }
+        #side-img{
+            background-color: rgb(0, 12, 24);
+            border-radius:100%;
+            margin-top: 5%;
+        }
+        #side-edu{
+            text-align:left;
+            margin-left: 14%;
+        }
+        #side-edu span{
+            font-size: 0.5cm;
+        }
+        #side-edu h3{
+            font-size: 0.45cm;
+        }
+        #side-lang{
+            text-align: left;
+            font-size: 0.5cm;
+            color: whitesmoke;
+        }
+
+        .side-part h1{
+            margin-left: 0px;
+        }
+
+        .side-hr{
+            width: 100%;
+        }
+
+
+        @media only screen and (max-width: 1200px) {
+            .desk-title-viewer{
+                display: none;
+            }
+            .mob-title-viewer{
+                display: block;
+            }
+            .mob-title-viewer h1{
+                color: white;
+                font-size: 0.5cm;
+            }
+            .side-part{
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: left;
+                text-align: left;
+                float:none;
+                margin-left: 0;
+                margin-top: -50px;
+                width: 100%;
+                padding-top: 0;
+                padding-bottom: 10%;
+                border-radius: 10px;
+                text-align: left;
+            }
+            #side-img{
+                width: 200px;
+                height: 220px;
+                margin-top: 20%;
+                margin-bottom: 40px;
+                border-radius: 100%;
+                border: 2px solid white;
+            }
+            .side-part h1{
+                font-size: 35px;
+            }
+            .side-hr{
+                width: 90%;
+            }
+            .ab-img{
+                margin-left: 0;
+            }
+            .ab-img h1{
+                font-size: 6.5vw;
+            }
+            .ab-table{
+                color: white;
+                text-align: left;
+                margin-left: 0%;
+            }
+            td{
+                padding: 2%;
+            }
+            #side-edu{
+                margin-left: 0%;
+            }
+            #side-lang{
+                margin-left: -25%;
+            }
+            .dog{
+                float: none;
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8%;
+                padding-left: 0;
+                padding-right: 0;
+                border-radius: 15px;
+            }
+            .main-part{
+                margin-left: 0%;
+                margin-right: 0;
+                margin-top: 10%;
+                padding-left: 10%;
+                padding-bottom: 10%;
+            }
+            .main-side-right{
+                width: 100%;
+                float: none;
+                border: none;
+                margin-top: 0;
+                padding-left: 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
