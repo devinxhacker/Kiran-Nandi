@@ -54,34 +54,35 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="portfolio.js"></script>
 </head>
 
-<body align="center" onload="active()">
-    <script src="portfolio.js"></script>
+<body align="center" onload="activly()">
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
         <span style="font-size:25px;cursor:pointer;color:#8c00ff;padding:5px 10px 5px 10px;border-radius: 100%;"
             class="hider" onclick="openNav()">&#9776;</span>
-        <nav class="overlay" id="nav">
+        <nav class="nav" id="nav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
-                <a id="dev" href="portfolio.html#home" onclick="active()">Home</a>
+                <a id="dev" href="portfolio.html#home" onclick="activly()">Home</a>
+                <a href="portfolio.html#about" onclick="activly()">About</a>
+                <a href="portfolio.html#skills" onclick="activly()">Skills</a>
+                <a href="portfolio.html#projects" class="active" onclick="active()">Projects</a>
+                <a href="portfolio.html#contact" onclick="activly()">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <nav class="overlay" id="navo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a id="dev" href="portfolio.html#home" onclick="active()">Home</a>
                 <a href="portfolio.html#about" onclick="active()">About</a>
                 <a href="portfolio.html#skills" onclick="active()">Skills</a>
                 <a href="portfolio.html#projects" class="active" onclick="active()">Projects</a>
                 <a href="portfolio.html#contact" onclick="active()">Contact</a>
-            </div>
-        </nav>
-    </header>
-    <script>
-        function openNav() {
-            document.getElementById("nav").style.height = "100%";
-        }
-
-        function closeNav() {
-            document.getElementById("nav").style.height = "0%";
-        }
-    </script>
+        </div>
+    </nav>
     <main>
         <section id="">
             <h1>My Projects</h1>

@@ -24,20 +24,20 @@
         <link rel="stylesheet" href="pstyle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body align="center" onload="active()">
+    <body align="center" onload="activly()">
         <script src="portfolio.js"></script>
         <header class="header">
             <a href="#" class="logo">Portfolio</a>
             <span style="font-size:25px;cursor:pointer;color:#ca99f2;padding:5px 10px 5px 10px;border-radius: 100%;" class="hider" onclick="openNav()">&#9776;</span>
-            <nav class="overlay" id="nav">
+            <nav class="nav" id="nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <a id="dev" href="#home" class="active" onclick="active()">Home</a>
-                    <a href="#about" onclick="active()">About</a>
-                    <a href="#skills" onclick="active()">Skills</a>
-                    <a href="#projects" onclick="active()">Projects</a>
-                    <a href="#contact" onclick="active()">Contact</a>
-                    <a id="danger" href="#danger-zone" onclick="active()" style="display:none">Insights</a>
+                <div class="nav-content">
+                    <a id="dev" href="#home" class="active" onclick="activly()">Home</a>
+                    <a href="#about" onclick="activly()">About</a>
+                    <a href="#skills" onclick="activly()">Skills</a>
+                    <a href="#projects" onclick="activly()">Projects</a>
+                    <a href="#contact" onclick="activly()">Contact</a>
+                    <a id="danger" href="#danger-zone" onclick="activly()" style="display:none">Insights</a>
                 </div>
             </nav>
             <script>
@@ -56,15 +56,17 @@
             document.getElementById("danger").addEventListener("click", handleClick);
             </script>
         </header>
-        <script>
-            function openNav() {
-              document.getElementById("nav").style.height = "100%";
-            }
-            
-            function closeNav() {
-              document.getElementById("nav").style.height = "0%";
-            }
-        </script>
+        <nav class="overlay" id="navo">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a id="dev" href="#home" class="active" onclick="active()">Home</a>
+                <a href="#about" onclick="active()">About</a>
+                <a href="#skills" onclick="active()">Skills</a>
+                <a href="#projects" onclick="active()">Projects</a>
+                <a href="#contact" onclick="active()">Contact</a>
+                <a id="danger" href="#danger-zone" onclick="active()" style="display:none">Insights</a>
+            </div>
+        </nav>
 
 
         <section class="home" id="home">
@@ -85,7 +87,7 @@
                     <a href="https://www.instagram.com/kirannandi896/" target="_blank" id="instagram"><img src="insta.png" alt="Instagram"></a>
                 </div>
                 <!--Download CV-->
-                <a href="cv.pdf" class="btn" id="cv">Download CV</a>
+                <a href="cv.pdf" target="_blank" class="btn" id="cv">Download CV</a>
             </div>
         </section>
 
