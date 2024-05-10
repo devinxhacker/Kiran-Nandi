@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Contact me</title>
+        <!-- Font awsome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="pstyle.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".form").on('submit',function(e) {
@@ -25,24 +27,28 @@
                     })
                 })
             })
-        </script>
+        </script> -->
+        <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+	    <script src="portfolio.js"></script>
 
     </head>
     <body>
-        <section class="contact" id="contact">
+        <button onclick="window.location.href='index.html'" style="color:white;padding:25px;background-color: black;border-radius: 50%;border:1px solid;cursor:pointer;margin:10px"><i style="color:white;font-size: 20px;" class="fa fa-arrow-left"></i></button>
+        <section style="margin-top: -140px;" class="contact" id="contact">
             <h2 class="heading">Contact <span>Me</span> for Password <br> <small style="font-size:0.5cm;text-decoration:none">It will be sent to your entered email id soon...</small></h2>
             <p style="text-align:center">If any issue: Whatsapp me: <a href="https://wa.me/+918530431501">Message</a></p>
-            <form class="form" method="post">
+            <form name="f1" class="form" action="https://formspree.io/f/xoqgnqwp"
+            method="POST">
               <div class="input-box">
                 <input type="text" name="name" class="name" placeholder="Full Name" required>
-                <input type="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" name="email" class="email" placeholder="Email Address" required>
+                <input type="email" name="email" class="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email Address" required>
               </div>
               <div class="input-box">
                 <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}" class="phone"  name="phone" required>
-                <input type="text" value="Portfolio Password Request" name="subject" class="subject" readonly>
+                <input type="text" value="Dashboard Password Request" placeholder="Contact Subject" name="subject" class="subject" required readonly>
               </div>
-              <textarea name="message" class="message" cols="30" rows="10" placeholder="Your Message(Optional)"></textarea>
-              <input type="submit" value="Send Request" name="submit" class="btn">
+              <textarea name="message" class="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+              <input type="submit" value="Send Message" name="submit" class="btn">
             </form>
           </section>
 

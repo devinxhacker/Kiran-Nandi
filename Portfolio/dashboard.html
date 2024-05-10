@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Dashboard
+        </title>
+        <link rel="stylesheet" href="dashboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+        <script src="dashboard.js"></script>
+	    <script src="portfolio.js"></script>
+    </head>
+    <body align="center"><center>
+        <div id="splash"><div id="loader"></div></div>
+        <div id="play_screen"><div id="lets_play"><i class="fa fa-play" style="font-size: 70px;color:white;text-align: center;padding: 5px; margin-left: 10px"></i></div></div>
+        <h1>Dashboard</h1>
+        <p>Welcome to my Dashboard</p>
+        <div class="container">
+            <div class="card">
+                <h1>Portfolio</h1>
+                <a href="portfolio.html" target="_blank"><i class="fa fa-arrow-right" style="font-size: 100%;"></i></a>
+            </div>
+            <div class="card">
+                <h1>Projects</h1>
+                <a href="projects.html" target="_blank"><i class="fa fa-arrow-right" style="font-size: 100%;"></i></a>
+            </div>
+            <div class="card">
+                <h1>Resume</h1>
+                <a href="aboutme.html" target="_blank"><i class="fa fa-arrow-right" style="font-size: 100%;"></i></a>
+            </div>
+        </div>
+        <!-- Live audio visualizing background -->
+        <div id="content">
+            <canvas id="canvas"></canvas>
+            <audio src="audio.mp3" id="audio" loop="-1" controls></audio>
+          </div>
+    </center></body>
+</html>
