@@ -1,6 +1,10 @@
 html{
     scroll-behavior: smooth;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+    width: 0px;
 }
 
 body {
@@ -12,10 +16,15 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
 }
 
 h1 {
     font-size: 50px;
+    margin-top: 5vw;
 }
 
 p {
@@ -26,18 +35,15 @@ p {
 #canvas {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 10%;
     width: 100%;
     height: 100%;
     z-index: -10;
+    scrollbar-width: thin;
 }
 
 audio {
     display: none;
-    position: fixed;
-    left: 10px;
-    bottom: 10px;
-    width: calc(100% - 20px);
 }
 
 #splash{
@@ -96,32 +102,57 @@ audio {
     cursor: pointer;
 }
 
+#lets_play:hover {
+    filter: invert(100%);
+    background-color: black;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+#container_display {
+    /* margin-top: 40vh; */
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
 
 .container{
-    justify-content: center;
-    margin-top:20px; 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(301px, 1fr));
+    margin-top: 30px;
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
     gap: 15px;
-    margin-left: 8%;
+    align-items: center;
+    justify-content: center;
 }
 
 
 
 .card{
-    width: 20vw;
-    height: 300px;
-    background-color: rgba(0, 0, 0, 0);
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.285);
     color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(255, 255, 255, 0.258);
     border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+    backdrop-filter: blur(10px);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
@@ -132,6 +163,7 @@ audio {
 
 .card h1{
     font-size: 30px;
+    margin-top: 25%;
 }
 
 .card a{
@@ -143,22 +175,84 @@ audio {
     color: white;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 600px) {
     .container{
-        width: 100%;
-        height: 100%;
-        margin-left: 0;
-        display: block;
-        gap: 15px;
-        padding: 20px;
-        justify-content: center;
-        margin-top: 30px;
-        translate: 0px 0px;
-        margin-left: -20px;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     }
 
     .card{
         margin-top: 30px;
         width: 70vw;
+    }
+}
+
+#audio-player{
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+    border: none;
+}
+
+#audio-toggler{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#canvas2_deblur{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+    border: none;
+}
+
+#canvas2{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9;
+    /* filter: blur(50px); */
+    backdrop-filter: blur(50px);
+    transition: all 0.5s ease-in-out;
+    background: rgba(0, 0, 0, 0.44);
+    
+}
+
+@media only screen and (max-width: 500px) {
+
+    #canvas2{
+        backdrop-filter: blur(5px);
+    }
+    #canvas2_deblur{
+        right: 20px;
+        top: 5vw;
+        font-size: 20px;
+    }
+
+    #audio-player{
+        left: 20px;
+        top: 5vw;
+    }
+
+    #audio-toggler{
+        font-size: 20px;
+    }
+
+    h1 {
+        margin-top: 15vw;
+        font-size: 10vw;
     }
 }

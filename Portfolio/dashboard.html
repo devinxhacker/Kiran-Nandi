@@ -6,16 +6,34 @@
         </title>
         <link rel="stylesheet" href="dashboard.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+        <!-- <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> -->
         <script src="dashboard.js"></script>
-	    <script src="portfolio.js"></script>
+	    <!-- <script src="portfolio.js"></script> -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Kiran Nandi - Portfolio">
+        <meta name="keywords"
+            content="portfolio, html, css, javascript, programming, coding, web development, programming languages, web development languages">
+        <meta name="author" content="Kiran Nandi">
+        <meta name="copyright" content="Kiran Nandi">
+        <meta name="theme-color" content="#000000">
+        <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Portfolio">
+        <meta name="msapplication-TileColor" content="#000000">
+        <link rel="icon" type="image/png" href="logo.png">
     </head>
     <body align="center"><center>
         <div id="splash"><div id="loader"></div></div>
         <div id="play_screen"><div id="lets_play"><i class="fa fa-play" style="font-size: 70px;color:white;text-align: center;padding: 5px; margin-left: 10px"></i></div></div>
+        <button id="audio-player" onclick="toggleAudio()"><i class="fa fa-pause" id="audio-toggler"></i></button>
+        <button id="canvas2_deblur" onclick="deblur()"><i class="fa fa-eye" id="deblur-toggler"></i></button>
         <h1>Dashboard</h1>
         <p>Welcome to my Dashboard</p>
-        <div class="container">
+        <button onclick="display_container()" id="container_display"><i class="fa fa-angle-down" id="container_toggler"></i></button>
+        <div class="container" style="margin-left: 10vw;">
             <div class="card">
                 <h1>Portfolio</h1>
                 <a href="portfolio.html" target="_blank"><i class="fa fa-arrow-right" style="font-size: 100%;"></i></a>
@@ -31,8 +49,9 @@
         </div>
         <!-- Live audio visualizing background -->
         <div id="content">
+            <canvas id="canvas2"></canvas>
             <canvas id="canvas"></canvas>
-            <audio src="audio.mp3" id="audio" loop="-1" controls></audio>
+            <audio id="audio" loop="-1" controls></audio>
           </div>
     </center></body>
 </html>
