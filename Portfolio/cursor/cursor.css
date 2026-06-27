@@ -1,0 +1,99 @@
+:root {
+    --cursor-core-size: 6px;
+    --cursor-outline-size: 32px;
+    --cursor-glow-size: 150px;
+    --cursor-color-1: #6ae4ff;
+    --cursor-color-2: #ff7ad9;
+    --cursor-color-3: #97ff9b;
+    --cursor-color-4: #ffe763;
+}
+
+#cursor, .cursor-core, .cursor-outline, .cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+}
+
+#cursor {
+    display: none; /* Hidden by default, shown by JS if not touch device */
+}
+
+.cursor-core {
+    width: var(--cursor-core-size);
+    height: var(--cursor-core-size);
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.cursor-outline {
+    /* margin-top: -13px;
+    margin-left: -13px; */
+    width: var(--cursor-outline-size);
+    height: var(--cursor-outline-size);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+                height 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+                border-radius 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                background 0.3s ease,
+                border-color 0.3s ease;
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cursor-glow {
+    width: var(--cursor-glow-size);
+    height: var(--cursor-glow-size);
+    background: radial-gradient(circle, var(--cursor-color-1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+    opacity: 0.4;
+    mix-blend-mode: screen;
+    transition: opacity 0.3s ease;
+}
+
+/* Cursor States */
+.cursor-hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: #fff !important;
+}
+
+.cursor-text {
+    width: 2px !important;
+    height: 24px !important;
+    border-radius: 2px !important;
+    background: #fff !important;
+}
+
+.cursor-pressed {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* RGB Border Animation */
+.cursor-rgb {
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--panel-strong), var(--panel-strong)), 
+                      conic-gradient(from var(--cursor-angle), var(--cursor-color-1), var(--cursor-color-2), var(--cursor-color-3), var(--cursor-color-4), var(--cursor-color-1));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+#cursor-particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* Magnetic Element Effect */
+.magnetic-element {
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiran Nandi - About Me</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Kiran Nandi - Java backend, cloud, and DSA portfolio">
+    <meta name="keywords" content="Kiran Nandi, Java, Spring Boot, AWS, backend engineer, MITAOE">
+    <meta name="author" content="Kiran Nandi">
+    <meta name="theme-color" content="#08111f">
+    <link rel="icon" type="image/png" href="../assets/old/logo.png">
+    <link rel="stylesheet" href="../portfolio/pstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .subpage {
+            padding-top: 12rem;
+        }
+
+        .subpage-hero {
+            min-height: auto;
+            padding-bottom: 5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .subpage-title {
+            max-width: 78rem;
+        }
+
+        .subpage-title h1 {
+            margin: 1rem 0;
+            font-size: clamp(4.8rem, 9vw, 8.4rem);
+            line-height: 0.95;
+        }
+
+        .subpage-title p {
+            max-width: 68rem;
+            color: var(--muted);
+            font-size: 1.8rem;
+        }
+
+        .profile-card {
+            padding: 2rem;
+            border-radius: var(--radius);
+            background: var(--panel);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 1.6rem;
+        }
+
+        .profile-card h2 {
+            font-size: 2.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .profile-card p,
+        .detail-list a {
+            color: var(--muted);
+            font-size: 1.5rem;
+        }
+
+        .detail-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.6rem;
+        }
+
+        .detail-item {
+            display: grid;
+            grid-template-columns: 2.8rem 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .detail-item i {
+            color: var(--accent);
+            margin-top: 0.35rem;
+        }
+
+        .about-band {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .resume-panel {
+            padding: 2rem;
+            border-radius: var(--radius);
+            background: var(--panel);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .resume-panel h2,
+        .resume-panel h3 {
+            margin-bottom: 1rem;
+        }
+
+        .resume-panel h2 {
+            font-size: 2.4rem;
+        }
+
+        .resume-panel h3 {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .resume-panel p,
+        .resume-panel li {
+            color: var(--muted);
+            font-size: 1.5rem;
+        }
+
+        .resume-panel ul {
+            padding-left: 1.8rem;
+        }
+
+        .resume-panel li {
+            margin-bottom: 0.8rem;
+        }
+
+        .metric-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.2rem;
+            margin-top: 2.4rem;
+        }
+
+        .subpage .stat {
+            min-height: 10rem;
+        }
+
+        @media screen and (max-width: 980px) {
+            .subpage-hero,
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                max-width: 46rem;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .subpage {
+                padding-top: 10rem;
+            }
+
+            .metric-strip {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script defer src="../script/scroll.js"></script>
+    <script defer src="../portfolio/portfolio.js"></script>
+</head>
+
+<body onload="activly()">
+    <div class="liquid-bg" aria-hidden="true">
+        <div class="liquid liquid-a"></div>
+        <div class="liquid liquid-b"></div>
+        <div class="liquid liquid-c"></div>
+        <div class="liquid liquid-d"></div>
+        <div class="liquid-vignette"></div>
+    </div>
+
+    <header class="header" id="header">
+        <a href="../portfolio/portfolio.html#home" class="logo">Kiran Nandi</a>
+        <span style="font-size:25px;cursor:pointer;color:#f7b7ff;padding:5px 10px;border-radius:999px;"
+            class="hider" onclick="openNav()">&#9776;</span>
+        <nav class="nav" id="nav">
+            <div class="nav-content">
+                <a href="../portfolio/portfolio.html#home" onclick="activly()">Home</a>
+                <a href="../portfolio/portfolio.html#about" class="active" onclick="activly()">About</a>
+                <a href="../portfolio/portfolio.html#skills" onclick="activly()">Skills</a>
+                <a href="../portfolio/portfolio.html#experience" onclick="activly()">Experience</a>
+                <a href="../projects/projects.html" onclick="activly()">Projects</a>
+                <a href="../portfolio/portfolio.html#contact" onclick="activly()">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="overlay" id="navo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="../portfolio/portfolio.html#home" onclick="active()">Home</a>
+            <a href="../portfolio/portfolio.html#about" class="active" onclick="active()">About</a>
+            <a href="../portfolio/portfolio.html#skills" onclick="active()">Skills</a>
+            <a href="../portfolio/portfolio.html#experience" onclick="active()">Experience</a>
+            <a href="../projects/projects.html" onclick="active()">Projects</a>
+            <a href="../portfolio/portfolio.html#contact" onclick="active()">Contact</a>
+        </div>
+    </nav>
+
+    <main class="subpage">
+        <section class="subpage-hero">
+            <div class="subpage-title">
+                <p class="eyebrow hidden">About me</p>
+                <h1 class="hidden">Kiran Nandi</h1>
+                <h3 class="hidden"><span id="job">Java Backend, Cloud, and Competitive Programming</span></h3>
+                <p class="hidden">
+                    I am a Computer Engineering student at MIT Academy of Engineering, Pune, building secure backend
+                    systems, cloud workflows, and DSA-driven products with Java, Spring Boot, AWS, and MySQL.
+                </p>
+                <div class="metric-strip hidden">
+                    <div class="stat animated-shell">
+                        <strong>9.05/10</strong>
+                        <span>CGPA</span>
+                    </div>
+                    <div class="stat animated-shell">
+                        <strong>Top 5</strong>
+                        <span>Institute rank</span>
+                    </div>
+                    <div class="stat animated-shell">
+                        <strong>GATE 2026</strong>
+                        <span>Qualified</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="profile-card animated-shell hidden">
+                <img src="../assets/kiran4.png" alt="Kiran Nandi">
+                <h2>Kiran Nandi</h2>
+                <p>B.Tech Computer Engineering, 2023 - 2027</p>
+                <div class="detail-list">
+                    <div class="detail-item">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Pune, Maharashtra, India</p>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:nandikiran15@gmail.com">nandikiran15@gmail.com</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa fa-phone"></i>
+                        <a href="tel:+918530431501">+91 85304 31501</a>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa fa-github"></i>
+                        <a href="https://github.com/devinxhacker" target="_blank">github.com/devinxhacker</a>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="about-band">
+            <div class="about-layout">
+                <aside class="resume-panel animated-shell hidden">
+                    <h2>Technical Core</h2>
+                    <div class="tag-list">
+                        <span>Java</span>
+                        <span>C++</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>Spring Boot</span>
+                        <span>Spring Security</span>
+                        <span>REST APIs</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>MySQL</span>
+                        <span>PostgreSQL</span>
+                        <span>System Design</span>
+                    </div>
+                    <h2>Competitive Programming</h2>
+                    <ul>
+                        <li>CodeChef 3-Star rated.</li>
+                        <li>Codeforces Pupil, rating 1133.</li>
+                        <li>LeetCode top 35.63% globally.</li>
+                        <li>Problem setter for the campus club.</li>
+                    </ul>
+                </aside>
+
+                <div class="timeline">
+                    <article class="timeline-card animated-shell hidden">
+                        <p class="timeline-meta">Jun 2025 - Aug 2025 | Campus Credentials</p>
+                        <h3>Java Full Stack Developer Intern</h3>
+                        <ul>
+                            <li>Built an AI-powered ticket booking platform with Spring Boot, reducing booking time by 90%.</li>
+                            <li>Engineered an AI-to-SQL engine that converted natural-language questions into optimized MySQL with 95% accuracy.</li>
+                            <li>Designed and secured 57 REST API endpoints using JWT authentication and RBAC.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-card animated-shell hidden">
+                        <p class="timeline-meta">Jan 2026 - Mar 2026 | Internvision</p>
+                        <h3>Cloud Developer Industrial Training</h3>
+                        <ul>
+                            <li>Engineered a serverless event-driven workflow with Amazon S3, AWS Lambda, and Amazon SNS.</li>
+                            <li>Hardened EC2 environments with custom security groups and least-privilege IAM roles.</li>
+                            <li>Integrated CloudWatch logs for runtime telemetry and faster production debugging.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-card animated-shell hidden">
+                        <p class="timeline-meta">Leadership</p>
+                        <h3>Technical Lead, CodeChef MITAOE Campus Club</h3>
+                        <ul>
+                            <li>Owned club technical strategy, managed infrastructure, and mentored 50+ juniors in DSA and software practices.</li>
+                            <li>Supported competitive programming culture through problem setting and technical guidance.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <div class="section-shell">
+                <h2 class="heading hidden">Achievements</h2>
+                <div class="card-grid achievement-grid">
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Smart India Hackathon 2024 Winner</h3>
+                        <p>National-level competition conducted by the Government of India.</p>
+                    </article>
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Best Paper Award</h3>
+                        <p>Avinya 2025 research on Physics-Informed LSTM for heat exchanger temperature prediction.</p>
+                    </article>
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Datathon 2025 Winner</h3>
+                        <p>Secured first place in a data-driven problem-solving competition.</p>
+                    </article>
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>AWS re/Start Graduate</h3>
+                        <p>Completed Amazon Web Services cloud training and certification.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="footer-txt">
+            <p>&copy; 2026 - Kiran Nandi | All Rights Reserved.</p>
+        </div>
+        <div class="uparr" id="uparr">
+            <a href="#top" aria-label="Back to top"><img src="../assets/old/uarrow.png" class="uppr" alt="Back to top"></a>
+        </div>
+    </footer>
+    <div class="foot">
+        <div class="layer1">
+            <div class="layer2">
+                <div class="layer3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

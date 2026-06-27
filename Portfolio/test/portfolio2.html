@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #080808;
+    color: #e8e8e8;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .scanline {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(180,0,0,0.015) 2px,
+      rgba(180,0,0,0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  /* HEADER */
+  .header {
+    border: 1px solid #1a0000;
+    border-top: 3px solid #cc0000;
+    padding: 36px 36px 28px;
+    margin: 32px 0 0;
+    position: relative;
+    background: #0d0000;
+    animation: borderPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes borderPulse {
+    0%, 100% { border-top-color: #cc0000; }
+    50% { border-top-color: #ff3333; }
+  }
+
+  .sys-tag {
+    position: absolute;
+    top: -11px;
+    left: 24px;
+    background: #cc0000;
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 10px;
+    letter-spacing: 2px;
+  }
+
+  .name-line {
+    font-family: 'Fira Code', monospace;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .name-line span {
+    color: #cc0000;
+  }
+
+  .handle {
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    color: #ffb4b4;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  .handle b { color: #cc0000; }
+
+  .tagline {
+    font-size: 15px;
+    color: #aaa;
+    margin-top: 16px;
+    line-height: 1.6;
+    max-width: 580px;
+    border-left: 2px solid #330000;
+    padding-left: 14px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+
+  .badge {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border: 1px solid #330000;
+    color: #cc0000;
+    letter-spacing: 1px;
+    background: #100000;
+    transition: all 0.2s;
+    cursor: default;
+    text-decoration: none;
+  }
+
+  .badge:hover {
+    background: #cc0000;
+    color: #fff;
+    border-color: #cc0000;
+  }
+
+  .badge.solid {
+    background: #cc0000;
+    color: #fff;
+    border-color: #cc0000;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 28px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .prompt {
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    color: #cc0000;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .prompt-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #330000, transparent);
+  }
+
+  /* MISSION BLOCK */
+  .mission-block {
+    background: #0a0000;
+    border: 1px solid #1f0000;
+    border-left: 3px solid #cc0000;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #ccc;
+  }
+
+  .mission-block .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 4px 0;
+    border-bottom: 1px solid #150000;
+  }
+
+  .mission-block .row:last-child { border-bottom: none; }
+
+  .dot {
+    color: #cc0000;
+    font-size: 16px;
+    line-height: 1.6;
+    flex-shrink: 0;
+  }
+
+  .row strong { color: #ff4444; font-weight: 500; }
+
+  /* ARSENAL */
+  .arsenal-grid {
+    display: grid;
+    gap: 6px;
+  }
+
+  .arsenal-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0;
+    background: #0a0000;
+    border: 1px solid #1a0000;
+    overflow: hidden;
+  }
+
+  .arsenal-label {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff0000;
+    background: #0f0000;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #1a0000;
+    letter-spacing: 0.5px;
+  }
+
+  .arsenal-val {
+    font-size: 13px;
+    color: #ccc;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    line-height: 1.5;
+  }
+
+  .chip {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    padding: 2px 8px;
+    background: #150000;
+    border: 1px solid #2a0000;
+    color: #ff6666;
+  }
+
+  /* PROJECTS */
+  .project-card {
+    background: #0a0000;
+    border: 1px solid #1a0000;
+    padding: 18px 20px;
+    margin-bottom: 8px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: #440000;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: #cc0000;
+  }
+
+  .project-status {
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #cc0000;
+    background: #1a0000;
+    border: 1px solid #330000;
+    padding: 2px 8px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .project-status.live { color: #44ff88; border-color: #004422; background: #001a0d; }
+  .project-status.private { color: #ffaa33; border-color: #443300; background: #1a0f00; }
+
+  .project-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .project-stack {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: #ffb4b4;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.7;
+  }
+
+  .project-desc b { color: #ff4444; font-weight: 500; }
+
+  /* ACHIEVEMENTS */
+  .ach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .ach-card {
+    background: #0a0000;
+    border: 1px solid #1a0000;
+    padding: 14px 16px;
+    transition: border-color 0.2s;
+  }
+
+  .ach-card:hover { border-color: #440000; }
+
+  .ach-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .ach-title .ico {
+    color: #cc0000;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .ach-sub {
+    font-size: 12px;
+    color: #666;
+    padding-left: 20px;
+    line-height: 1.5;
+  }
+
+  /* CP STATS */
+  .cp-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .cp-card {
+    flex: 1;
+    min-width: 150px;
+    background: #0a0000;
+    border: 1px solid #1a0000;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .cp-platform {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: #ffb4b4;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .cp-rating {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cc0000;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .cp-label {
+    font-size: 11px;
+    color: #555;
+    margin-top: 4px;
+    font-family: 'Fira Code', monospace;
+  }
+
+  /* STATS MOCK */
+  .stats-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .stat-block {
+    flex: 1;
+    background: #0a0000;
+    border: 1px solid #1a0000;
+    padding: 16px;
+  }
+
+  .stat-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    color: #ffb4b4;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .stat-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .stat-lang {
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: #888;
+    width: 50px;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 4px;
+    background: #150000;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: #cc0000;
+    animation: barGrow 1.5s ease-out forwards;
+    width: 0%;
+  }
+
+  @keyframes barGrow {
+    to { width: var(--w); }
+  }
+
+  .stat-pct {
+    font-family: 'Fira Code', monospace;
+    font-size: 10px;
+    color: #ff3838;
+    width: 32px;
+    text-align: right;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 36px;
+    border: 1px solid #1a0000;
+    padding: 20px 24px;
+    background: #0a0000;
+    text-align: center;
+  }
+
+  .footer-quote {
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .footer-quote span { color: #cc0000; }
+
+  .blink {
+    animation: blink 1s step-end infinite;
+    color: #cc0000;
+    font-family: 'Fira Code', monospace;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .ping-line {
+    margin-top: 14px;
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    color: #6f0000;
+    letter-spacing: 1px;
+  }
+
+  .ping-line a { color: #d30202; text-decoration: none; }
+  .ping-line a:hover { color: #cc0000; }
+
+  .status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #cc0000;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+
+  .typing-cursor { font-size: 20px; }
+
+  /* SEPARATOR */
+  .sep {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0;
+    opacity: 0.3;
+  }
+  .sep-line { flex:1; height:1px; background:#cc0000; }
+  .sep-dot { color:#cc0000; font-size:8px; }
+
+  /* Appear animations */
+  .section { opacity: 0; transform: translateY(12px); animation: fadeUp 0.5s ease forwards; }
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.35s; }
+  .section:nth-child(4) { animation-delay: 0.5s; }
+  .section:nth-child(5) { animation-delay: 0.65s; }
+  .section:nth-child(6) { animation-delay: 0.8s; }
+  .section:nth-child(7) { animation-delay: 0.95s; }
+  .section:nth-child(8) { animation-delay: 1.1s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .header { opacity: 0; animation: fadeUp 0.6s 0.05s ease forwards; }
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="sys-tag">ACCESS GRANTED</span>
+    <div class="name-line">KIRAN<span>.</span>NANDI</div>
+    <div class="handle">// <b>@devinxhacker</b> · MIT Academy of Engineering · CGPA 9.05 · Top-5 Ranker<span class="blink">_</span></div>
+    <div class="tagline">
+      Backend Architect · Cloud Engineer · Competitive Programmer<br>
+      Engineering distributed systems, secure cloud pipelines, and enterprise-grade APIs — <em>built to survive production.</em>
+    </div>
+    <div class="badges">
+      <a class="badge solid" href="https://www.linkedin.com/in/kiran-nandi-76a003288/">LinkedIn</a>
+      <a class="badge" href="https://kirannandi.web.app">Portfolio</a>
+      <a class="badge" href="kirannandi896@gmail.com">Email</a>
+      <a class="badge" href="https://github.com/devinxhacker">GitHub</a>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="section">
+    <div class="section-header">
+      <span class="prompt">$ cat /etc/current_mission</span>
+      <div class="prompt-line"></div>
+    </div>
+    <div class="mission-block">
+      <div class="row">
+        <span class="dot">▸</span>
+        <div><strong>NOW:</strong> Summer Intern @ <strong>Parma IT Solutions</strong> — Building Pharma ERP system for pharmacy store management <span style="color:#444;font-size:12px;font-family:Fira Code,monospace">[ Spring Boot · MySQL · RBAC · JWT ]</span></div>
+      </div>
+      <div class="row">
+        <span class="dot">▸</span>
+        <div><strong>PREV:</strong> Java Full Stack Intern @ <strong>Campus Credentials</strong> — AI-to-SQL engine · 95% NL→SQL accuracy · 57 secured REST APIs</div>
+      </div>
+      <div class="row">
+        <span class="dot">▸</span>
+        <div><strong>PREV:</strong> Cloud Developer @ <strong>Internvision</strong> — Serverless AWS pipelines · S3 · Lambda · SNS · Least-privilege IAM · CloudWatch</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARSENAL -->
+  <div class="section">
+    <div class="section-header">
+      <span class="prompt">$ ./load_arsenal.sh</span>
+      <div class="prompt-line"></div>
+    </div>
+    <div class="arsenal-grid">
+      <div class="arsenal-row">
+        <div class="arsenal-label">LANGUAGES</div>
+        <div class="arsenal-val">
+          <span class="chip">Java (Adv.)</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Bash</span>
+        </div>
+      </div>
+      <div class="arsenal-row">
+        <div class="arsenal-label">BACKEND</div>
+        <div class="arsenal-val">
+          <span class="chip">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">JPA/Hibernate</span><span class="chip">REST APIs</span><span class="chip">Microservices</span>
+        </div>
+      </div>
+      <div class="arsenal-row">
+        <div class="arsenal-label">CLOUD / DEVOPS</div>
+        <div class="arsenal-val">
+          <span class="chip">AWS EC2/S3/Lambda</span><span class="chip">IAM/SNS/CloudWatch</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="arsenal-row">
+        <div class="arsenal-label">DATABASES</div>
+        <div class="arsenal-val">
+          <span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">Schema Design</span><span class="chip">Query Optimization</span><span class="chip">RBAC</span>
+        </div>
+      </div>
+      <div class="arsenal-row">
+        <div class="arsenal-label">DSA</div>
+        <div class="arsenal-val" style="font-size:12.5px; color:#777;">Arrays · Trees · Graphs · DP · Tries · Segment Trees · Greedy · Hashing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="prompt">$ ls -la /projects/pinned/</span>
+      <div class="prompt-line"></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status private">ACTIVE — ENTERPRISE</span>
+      <div class="project-name">Pharma ERP System</div>
+      <div class="project-stack">Java · Spring Boot · MySQL · JWT · RBAC</div>
+      <div class="project-desc">Pharmacy store management platform being built under <b>Parma IT Solutions</b>. Full inventory, billing, and prescription workflows. Private enterprise repo — active development.</div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status live">LIVE</span>
+      <div class="project-name">Playgorithm — Gamified Algorithm Learning</div>
+      <div class="project-stack">Java · Spring Boot · DAG Traversal · REST · Telemetry</div>
+      <div class="project-desc"><b>66 REST APIs</b> for real-time state management. DSA prerequisites modeled as <b>DAG-based dependency resolution</b> across 100+ problems. Adaptive difficulty engine from engagement telemetry analytics. → <a href="https://playgorithm.onrender.com" style="color:#660000;">playgorithm.onrender.com</a></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status private">ENTERPRISE — PRIVATE</span>
+      <div class="project-name">Healthcare ERP — Hospital Digital Transformation</div>
+      <div class="project-stack">Java · Spring Boot · MySQL · Spring Events · JWT · 6-role RBAC</div>
+      <div class="project-desc">Multi-module REST API for scheduling, billing, inventory. Normalized schema + indexing cut query time by <b>40%</b> under concurrent load. Stateless JWT + <b>6 distinct RBAC roles</b> with zero cross-role leakage.</div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status" style="color:#8899ff;border-color:#223;background:#0a0015;">AI / ML</span>
+      <div class="project-name">CareerPathRecommendationSystem</div>
+      <div class="project-stack">Python · ML · Classification Models</div>
+      <div class="project-desc">Data-driven career path recommendation engine powered by ML classifiers. End-to-end pipeline from feature extraction to inference.</div>
+    </div>
+
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="prompt">$ cat /var/log/achievements.log</span>
+      <div class="prompt-line"></div>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-title"><span class="ico">◆</span> Smart India Hackathon 2024</div>
+        <div class="ach-sub">Winner · Govt. of India · 1 of 50,000+ teams</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-title"><span class="ico">◆</span> Datathon 2025</div>
+        <div class="ach-sub">1st Place · Data-driven competition</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-title"><span class="ico">◆</span> GDG Hackathon</div>
+        <div class="ach-sub">Industry Project Award · Google Developer Group</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-title"><span class="ico">◆</span> Best Paper — Avinya 2025</div>
+        <div class="ach-sub">Physics-Informed LSTM · heat exchanger prediction</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-title"><span class="ico">◆</span> GATE 2026</div>
+        <div class="ach-sub">Qualified · Strong CS theoretical foundations</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-title"><span class="ico">◆</span> Super-30 Batch, MITAOE</div>
+        <div class="ach-sub">Top 30 performers institute-wide</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CP -->
+  <div class="section">
+    <div class="section-header">
+      <span class="prompt">$ cat /etc/competitive_programming</span>
+      <div class="prompt-line"></div>
+    </div>
+    <div class="cp-row">
+      <div class="cp-card">
+        <div class="cp-platform">CODECHEF</div>
+        <div class="cp-rating">⭐⭐⭐</div>
+        <div class="cp-label">3-STAR · while_flies_62</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-platform">CODEFORCES</div>
+        <div class="cp-rating">1133</div>
+        <div class="cp-label">PUPIL RATING</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-platform">LEETCODE</div>
+        <div class="cp-rating">Top 36%</div>
+        <div class="cp-label">GLOBALLY · CONSISTENT</div>
+      </div>
+      <div class="cp-card">
+        <div class="cp-platform">CAMPUS ROLE</div>
+        <div class="cp-rating" style="font-size:14px;padding-top:4px;">TECH LEAD</div>
+        <div class="cp-label">CodeChef MITAOE · 50+ mentored</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="prompt">$ ./fetch_stats.sh</span>
+      <div class="prompt-line"></div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-title">TOP LANGUAGES</div>
+        <div class="stat-bar-row">
+          <span class="stat-lang">Java</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:78%"></div></div>
+          <span class="stat-pct">78%</span>
+        </div>
+        <div class="stat-bar-row">
+          <span class="stat-lang">Python</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:52%; animation-delay:0.1s"></div></div>
+          <span class="stat-pct">52%</span>
+        </div>
+        <div class="stat-bar-row">
+          <span class="stat-lang">C++</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:41%; animation-delay:0.2s"></div></div>
+          <span class="stat-pct">41%</span>
+        </div>
+        <div class="stat-bar-row">
+          <span class="stat-lang">JS</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:28%; animation-delay:0.3s"></div></div>
+          <span class="stat-pct">28%</span>
+        </div>
+        <div class="stat-bar-row">
+          <span class="stat-lang">HTML</span>
+          <div class="bar-track"><div class="bar-fill" style="--w:15%; animation-delay:0.4s"></div></div>
+          <span class="stat-pct">15%</span>
+        </div>
+      </div>
+      <div class="stat-block" style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;">
+        <div style="text-align:center;">
+          <div class="stat-title" style="text-align:center;">REPOSITORIES</div>
+          <div style="font-size:36px;font-weight:700;color:#cc0000;font-family:'Fira Code',monospace;">66</div>
+          <div style="font-size:11px;color:#ffb4b4;font-family:'Fira Code',monospace;margin-top:4px;">PUBLIC REPOS</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="stat-title" style="text-align:center;">CGPA</div>
+          <div style="font-size:36px;font-weight:700;color:#cc0000;font-family:'Fira Code',monospace;">9.05</div>
+          <div style="font-size:11px;color:#ffb4b4;font-family:'Fira Code',monospace;margin-top:4px;">TOP-5 RANKER</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:6px;background:#0a0000;border:1px solid #1a0000;padding:12px 16px;text-align:center;">
+      <span style="font-family:'Fira Code',monospace;font-size:12px;color:#ffb4b4;">[ Stats powered by github-readme-stats · Streak via github-readme-streak-stats ]</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-quote">
+      <span>"</span>Build systems that survive production.<br>
+      Write code that survives peer review.<br>
+      Ship features that survive the user.<span>"</span>
+    </div>
+    <div class="ping-line" style="margin-top:16px;">
+      <span class="status-dot"></span>
+      <span style="color:#ffb4b4;">OPEN TO SWE INTERNSHIPS &amp; COLLABORATIONS</span>
+      &nbsp;·&nbsp;
+      <a href="mailto:nandikiran15@gmail.com">nandikiran15@gmail.com</a>
+    </div>
+    <div class="ping-line" style="margin-top:8px; color:#ffb4b4;">
+      &copy; devinxhacker · MITAOE · Pune, India <span class="blink" style="font-size:14px;">▋</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

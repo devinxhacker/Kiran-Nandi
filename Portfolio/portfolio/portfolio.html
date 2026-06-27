@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiran Nandi - Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kiran Nandi - Computer Engineering student portfolio">
+    <meta name="keywords"
+        content="Kiran Nandi, portfolio, Java, Spring Boot, AWS, backend engineering, computer engineering">
+    <meta name="author" content="Kiran Nandi">
+    <meta name="copyright" content="Kiran Nandi">
+    <meta name="theme-color" content="#08111f">
+    <link rel="icon" type="image/png" href="../assets/old/logo.png">
+    <link rel="stylesheet" href="pstyle.css">
+    <link rel="stylesheet" href="../cursor/cursor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="../script/scroll.js"></script>
+    <script defer src="../cursor/particles.js"></script>
+    <script defer src="../cursor/cursor.js"></script>
+    <script defer src="portfolio.js"></script>
+</head>
+
+<body onload="activly()">
+    <div id="page-loader" aria-hidden="true">
+        <div class="loader-backdrop"></div>
+        <div class="loader-card" role="status" aria-live="polite">
+            <div class="loader-logo" aria-hidden="true">
+                <span class="loader-dot dot-1"></span> <span class="loader-dot dot-2"></span> <span
+                    class="loader-dot dot-3"></ span>
+            </div>
+            <div class="loader-text">Loading</div>
+            <div class="loader-bar" aria-hidden="true">
+                <span class="loader-bar-fill"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor" id="cursor">
+        <div class="cursor-glow"></div>
+        <div class="cursor-outline"></div>
+        <div class="cursor-core"></div>
+        <div id="cursor-particles"></div>
+        <!-- <div class="cursor-outline"></div> -->
+    </div>
+
+
+    <div class="liquid-bg" aria-hidden="true">
+        <div id="cursor-glow" class="cursor-glow"></div>
+        <div class="liquid liquid-a"></div>
+
+        <div class="liquid liquid-b"></div>
+        <div class="liquid liquid-c"></div>
+        <div class="liquid liquid-d"></div>
+        <div class="liquid-vignette"></div>
+    </div>
+    <header class="header" id="header">
+        <a href="#home" class="logo">Kiran Nandi</a>
+        <span style="font-size:25px;cursor:pointer;color:#f7b7ff;padding:5px 10px;border-radius:999px;" class="hider"
+            onclick="openNav()">&#9776;</span>
+        <nav class="nav" id="nav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="nav-content">
+                <a href="javascript:void(0)" class="active" onclick="showSection('home')">Home</a>
+                <a href="javascript:void(0)" onclick="showSection('about')">About</a>
+                <a href="javascript:void(0)" onclick="showSection('skills')">Skills</a>
+                <a href="javascript:void(0)" onclick="showSection('experience')">Experience</a>
+                <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+                <a href="javascript:void(0)" onclick="showSection('achievements')">Achievements</a>
+                <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+                <a href="javascript:void(0)" onclick="showSection('danger-zone')" style="display:none">Insights</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="overlay" id="navo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="javascript:void(0)" class="active" onclick="showSection('home')">Home</a>
+            <a href="javascript:void(0)" onclick="showSection('about')">About</a>
+            <a href="javascript:void(0)" onclick="showSection('skills')">Skills</a>
+            <a href="javascript:void(0)" onclick="showSection('experience')">Experience</a>
+            <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+            <a href="javascript:void(0)" onclick="showSection('achievements')">Achievements</a>
+            <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+            <a href="javascript:void(0)" onclick="showSection('danger-zone')" style="display:none">Insights</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="home hero page-section" id="home">
+            <div class="hero-copy h-cont">
+
+                <div class="myimg hidden">
+                    <img src="../assets/kiran5.png" alt="Kiran Nandi">
+                </div>
+                <p class="eyebrow hidden">Computer Engineering student at MITAOE</p>
+                <h3 class="hidden">Hello, I am</h3>
+                <h1 class="hidden">Kiran Nandi</h1>
+                <h3 class="hidden"><span id="job">Java Backend, Cloud, and DSA</span></h3>
+                <p class="hidden">
+                    I build secure REST APIs, cloud-native workflows, and data-driven products with Java,
+                    Spring Boot, AWS, and strong problem-solving fundamentals.
+                </p>
+
+                <div class="hero-stats hidden">
+                    <div class="stat animated-shell">
+                        <strong>9.05/10</strong>
+                        <span>CGPA</span>
+                    </div>
+                    <div class="stat animated-shell">
+                        <strong>Top 5</strong>
+                        <span>Institute rank</span>
+                    </div>
+                    <div class="stat animated-shell">
+                        <strong>50+</strong>
+                        <span>Juniors mentored</span>
+                    </div>
+                </div>
+
+                <div class="social hidden">
+                    <a href="https://www.linkedin.com/in/kiran-nandi-76a003288/" target="_blank"
+                        aria-label="LinkedIn"><img src="../assets/old/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/devinxhacker" target="_blank" aria-label="GitHub"><img
+                            src="../assets/old/github.png" alt="GitHub"></a>
+                    <a href="https://www.codechef.com/users/devinx_hacker" target="_blank" aria-label="CodeChef"><img
+                            src="../assets/old/codechef.png" alt="CodeChef"></a>
+                    <a href="https://www.instagram.com/kn_c896/" target="_blank" aria-label="Instagram"><img
+                            src="../assets/old/insta.png" alt="Instagram"></a>
+                </div>
+
+                <a href="../pdfs/KIRAN_NANDI_RESUME.pdf" target="_blank" class="btn hidden" id="cv">
+                    <i class="fa fa-download"></i> Resume
+                </a>
+            </div>
+
+        </section>
+
+        <section class="about page-section" id="about">
+            <div class="section-shell ab-cont">
+                <h2 class="heading hidden">About <span id="ab-me">Me</span></h2>
+                <div class="about-grid">
+                    <div class="ab-img hidden">
+                        <img src="../assets/kiran4.png" alt="Kiran Nandi portrait" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="about-content-text hidden">
+                        <h3>Backend-focused computer engineer</h3>
+                        <p>
+                            I am a Computer Engineering student at MIT Academy of Engineering, Pune,
+                            graduating in 2027 with a 9.05/10 CGPA and a top-5 institute rank.
+                        </p>
+                        <p>
+                            My recent work has centered on Java, Spring Boot, AWS, MySQL, and distributed backend
+                            systems.
+                            During my internship at Campus Credentials, I built AI-powered booking and AI-to-SQL
+                            features.
+                            In cloud training at Internvision, I designed serverless workflows on AWS.
+                        </p>
+                        <p>
+                            Outside coursework, I compete in programming contests, contribute to campus tech
+                            communities,
+                            and lead the CodeChef MITAOE Campus Club, where I mentor junior developers in DSA and
+                            software practice.
+                        </p>
+
+                        <div class="tag-list">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>AWS</span>
+                            <span>MySQL</span>
+                            <span>DSA</span>
+                            <span>Leadership</span>
+                        </div>
+
+                        <a href="../about/aboutme.html" class="btn hidden">Know more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills page-section" id="skills">
+            <div class="section-shell">
+                <h2 class="heading hidden">My <span>Skills</span></h2>
+                <div class="card-grid skills-grid">
+                    <article class="info-card animated-shell hidden">
+                        <span class="card-icon">01</span>
+                        <h3>Languages and DSA</h3>
+                        <p>Java, C++, SQL, Python, Bash, arrays, trees, graphs, dynamic programming, hashing, tries,
+                            segment trees, and greedy techniques.</p>
+                    </article>
+
+                    <article class="info-card animated-shell hidden">
+                        <span class="card-icon">02</span>
+                        <h3>Backend and APIs</h3>
+                        <p>Spring Boot, Spring Security, Spring MVC, Spring Data JPA, Hibernate, REST APIs, JWT
+                            authentication, and role-based access control.</p>
+                    </article>
+
+                    <article class="info-card animated-shell hidden">
+                        <span class="card-icon">03</span>
+                        <h3>Cloud and DevOps</h3>
+                        <p>AWS EC2, S3, Lambda, IAM, SNS, CloudWatch, Docker, Git, and GitHub Actions for shipping and
+                            monitoring production workflows.</p>
+                    </article>
+
+                    <article class="info-card animated-shell hidden">
+                        <span class="card-icon">04</span>
+                        <h3>Databases and Design</h3>
+                        <p>MySQL, PostgreSQL, schema design, query optimization, system design, RBAC, and clean data
+                            modeling for scalable applications.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience page-section" id="experience">
+            <div class="section-shell">
+                <h2 class="heading hidden">Experience</h2>
+                <div class="timeline">
+                    <article class="timeline-card animated-shell hidden">
+                        <p class="timeline-meta">Jun 2025 - Aug 2025 | Campus Credentials</p>
+                        <h3>Java Full Stack Developer Intern</h3>
+                        <ul>
+                            <li>Built an AI-powered ticket booking platform with Spring Boot, reducing end-to-end
+                                booking time by 90%.</li>
+                            <li>Engineered an AI-to-SQL engine that converts natural-language queries into optimized
+                                MySQL statements with 95% accuracy.</li>
+                            <li>Designed and secured 57 REST API endpoints with Spring Security, JWT authentication, and
+                                RBAC.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-card animated-shell hidden">
+                        <p class="timeline-meta">Jan 2026 - Mar 2026 | Internvision</p>
+                        <h3>Cloud Developer Industrial Training</h3>
+                        <ul>
+                            <li>Built a serverless, event-driven data pipeline using Amazon S3, AWS Lambda, and Amazon
+                                SNS.</li>
+                            <li>Provisioned and hardened Amazon EC2 environments and custom security groups to reduce
+                                attack surface.</li>
+                            <li>Created least-privilege IAM execution roles and integrated CloudWatch logging for faster
+                                debugging.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects page-section" id="projects">
+            <div class="section-shell">
+                <h2 class="heading hidden">Featured <span>Projects</span></h2>
+                <div class="card-grid project-grid">
+                    <article class="project-card animated-shell hidden">
+                        <div class="project-art art-erp">
+                            <span>Featured build</span>
+                        </div>
+                        <h3>Healthcare ERP - Digital Transformation</h3>
+                        <p>
+                            A multi-module Spring Boot REST API that digitizes scheduling, billing, and inventory
+                            workflows for hospital operations.
+                        </p>
+                        <ul>
+                            <li>Reduced manual operational overhead by 80%.</li>
+                            <li>Improved complex query execution time by 40% with better indexing.</li>
+                            <li>Implemented stateless JWT sessions and RBAC across 6 user roles.</li>
+                        </ul>
+                        <div class="tag-list">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                            <span>JWT</span>
+                            <span>RBAC</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card animated-shell hidden">
+                        <div class="project-art art-playgorithm">
+                            <span>Learning platform</span>
+                        </div>
+                        <h3>Playgorithm</h3>
+                        <p>
+                            A gamified algorithm learning platform that tracks progress, supports live state
+                            management,
+                            and models prerequisite ordering with graph traversal.
+                        </p>
+                        <ul>
+                            <li>Designed and implemented 66 REST APIs for concurrent multi-user sessions.</li>
+                            <li>Modeled challenge dependencies with DAG traversal across 100+ algorithm problems.</li>
+                            <li>Built analytics for time-on-task, attempts, and error rates to tune difficulty.</li>
+                        </ul>
+                        <div class="tag-list">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>DSA</span>
+                            <span>Analytics</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card animated-shell hidden">
+                        <div class="project-art art-portfolio">
+                            <span>Current site</span>
+                        </div>
+                        <h3>Portfolio Website</h3>
+                        <p>
+                            This responsive portfolio refresh presents my latest resume, skills, and experience with a
+                            cleaner visual system.
+                        </p>
+                        <ul>
+                            <li>Built with semantic HTML, CSS, and JavaScript.</li>
+                            <li>Focused on readability, responsive layouts, and smoother navigation.</li>
+                            <li>Acts as the central place for my projects and contact details.</li>
+                        </ul>
+                        <div class="tag-list">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements page-section" id="achievements">
+            <div class="section-shell">
+                <h2 class="heading hidden">Achievements</h2>
+                <div class="card-grid achievement-grid">
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Smart India Hackathon 2024 Winner</h3>
+                        <p>National-level competition conducted by the Government of India, with about 50,000
+                            participating teams.</p>
+                    </article>
+
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Best Paper Award</h3>
+                        <p>Avinya 2025 Undergraduate Student Conference for research on Physics-Informed LSTM
+                            temperature prediction.</p>
+                    </article>
+
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Datathon 2025 Winner</h3>
+                        <p>First place in a data-driven problem-solving competition.</p>
+                    </article>
+
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>GATE 2026 Qualified</h3>
+                        <p>Graduate Aptitude Test in Engineering qualification that reflects a strong theoretical CS
+                            foundation.</p>
+                    </article>
+
+                    <article class="achievement-card animated-shell hidden">
+                        <h3>Technical Lead</h3>
+                        <p>CodeChef MITAOE Campus Club lead, managing strategy, infrastructure, and mentoring 50+ junior
+                            members.</p>
+                    </article>
+                </div>
+
+                <div class="card-grid misc-grid">
+                    <article class="info-card animated-shell hidden">
+                        <span class="card-icon">05</span>
+                        <h3>Certifications</h3>
+                        <p>AWS re/Start Graduate, Data Structures and Algorithms for Campus Placements, and IT Project
+                            Management / PMI-PMP Prep.</p>
+                    </article>
+
+                    <article class="info-card animated-shell hidden">
+                        <span class="card-icon">06</span>
+                        <h3>Competitive Programming</h3>
+                        <p>CodeChef 3-Star, Codeforces Pupil, and consistent problem setter for the campus club.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact page-section" id="contact">
+            <div class="section-shell">
+                <h2 class="heading hidden">Contact <span>Me</span></h2>
+                <p class="contact-copy hidden">
+                    Open to backend, cloud, and full-stack conversations, internships, collaborations, and research
+                    opportunities.
+                </p>
+
+                <form name="f1" class="form hidden" action="https://formspree.io/f/xoqgnqwp" method="POST">
+                    <div class="input-box">
+                        <input type="text" name="name" class="name" placeholder="Full Name" required>
+                        <input type="email" name="email" class="email"
+                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}" class="phone" name="phone"
+                            required>
+                        <input type="text" placeholder="Contact Subject" name="subject" class="subject" required>
+                    </div>
+                    <textarea name="message" class="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    <input type="submit" value="Send Message" name="submit" class="btn">
+                </form>
+            </div>
+        </section>
+
+        <section class="danger-zone page-section hidden" id="danger-zone" style="display:none">
+            <h2 class="heading">Insights</h2>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div class="elfsight-app-c854d51f-1a81-4064-8a8e-1d4a8f14a1ae" data-elfsight-app-lazy></div>
+        </section>
+
+        <!-- <section class="social-section">
+            <img src="../assets/old/logo.png" class="icon hidden" alt="Logo">
+            <div class="social" id="end">
+                <a class="hidden" href="https://www.linkedin.com/in/kiran-nandi-76a003288/" target="_blank"
+                    aria-label="LinkedIn"><img src="../assets/old/linkedin3.png" alt="LinkedIn"></a>
+                <a class="hidden" href="https://x.com/kirannandi896" target="_blank"
+                    aria-label="X / Twitter"><img src="../assets/old/twiter.png" alt="X / Twitter"></a>
+                <a class="hidden" href="https://wa.me/+918530431501" target="_blank"
+                    aria-label="WhatsApp"><img src="../assets/old/whatsapp3.png" alt="WhatsApp"></a>
+                <a class="hidden" href="https://www.instagram.com/kn_c896/" target="_blank"
+                    aria-label="Instagram"><img src="../assets/old/insta3.png" alt="Instagram"></a>
+            </div>
+        </section> -->
+
+        <footer class="footer" id="footer">
+            <div class="footer-txt">
+                <p>&copy; 2026 - Kiran Nandi | All Rights Reserved.</p>
+            </div>
+
+            <div class="uparr" id="uparr">
+                <a href="#home" aria-label="Back to top">
+                    <img src="../assets/old/uarrow.png" class="uppr" alt="Back to top">
+                </a>
+            </div>
+        </footer>
+
+        <!-- <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(3, 11, 93, 0.69)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(245, 39, 145, 0.4)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(7, 178, 57, 0.4)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(7, 85, 178, 0.4)" />
+                </g>
+            </svg>
+        </div> -->
+    </main>
+
+    <!-- <script>
+        const cursor = document.querySelector(".cursor");
+        const dot = document.querySelector(".cursor-dot");
+        const outline = document.querySelector(".cursor-outline");
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+
+        let outlineX = mouseX;
+        let outlineY = mouseY;
+
+        const speed = 0.18;
+
+        document.addEventListener("mousemove", (e) => {
+
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+        });
+
+        function animate() {
+
+            outlineX += (mouseX - outlineX) * speed;
+            outlineY += (mouseY - outlineY) * speed;
+
+            dot.style.left = mouseX + "px";
+            dot.style.top = mouseY + "px";
+
+            outline.style.left = outlineX + "px";
+            outline.style.top = outlineY + "px";
+
+            requestAnimationFrame(animate);
+
+        }
+
+        const hoverTargets = document.querySelectorAll(
+            'a,button,.btn,.card,.project,.service,.social-link,input,textarea'
+        );
+
+        hoverTargets.forEach(item => {
+
+            item.addEventListener("mouseenter", () => {
+
+                cursor.classList.add("hover");
+
+            });
+
+            item.addEventListener("mouseleave", () => {
+
+                cursor.classList.remove("hover");
+
+            });
+
+        });
+
+        document.querySelectorAll("p,h1,h2,h3,h4,h5,h6,span").forEach(el => {
+
+            el.addEventListener("mouseenter", () => {
+
+                cursor.classList.add("text");
+
+            });
+
+            el.addEventListener("mouseleave", () => {
+
+                cursor.classList.remove("text");
+
+            });
+
+        });
+
+        document.addEventListener("mousedown", () => {
+
+            cursor.classList.add("click");
+
+        });
+
+        document.addEventListener("mouseup", () => {
+
+            cursor.classList.remove("click");
+
+        });
+
+        document.addEventListener("mouseleave", () => {
+
+            cursor.style.opacity = "0";
+
+        });
+
+        document.addEventListener("mouseenter", () => {
+
+            cursor.style.opacity = "1";
+
+        });
+
+        document.querySelectorAll(".btn").forEach(btn => {
+
+            btn.addEventListener("mousemove", (e) => {
+
+                const rect = btn.getBoundingClientRect();
+
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                btn.style.transform = `translate(${x * 0.25}px,${y * 0.25}px)`;
+
+            });
+
+            btn.addEventListener("mouseleave", () => {
+
+                btn.style.transform = "translate(0,0)";
+
+            });
+
+        });
+
+        document.addEventListener("click", (e) => {
+
+            const ripple = document.createElement("span");
+
+            ripple.className = "cursor-ripple";
+
+            ripple.style.left = e.clientX + "px";
+            ripple.style.top = e.clientY + "px";
+
+            document.body.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+
+        });
+
+        animate();
+    </script> -->
+</body>
+
+</html>

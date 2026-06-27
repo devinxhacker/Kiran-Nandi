@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiran Nandi - Projects</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Kiran Nandi - Java, Spring Boot, AWS, Android, and web projects">
+    <meta name="keywords" content="Kiran Nandi projects, Java, Spring Boot, AWS, Android, portfolio">
+    <meta name="author" content="Kiran Nandi">
+    <meta name="theme-color" content="#08111f">
+    <link rel="icon" type="image/png" href="../assets/old/logo.png">
+    <link rel="stylesheet" href="../portfolio/pstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .projects-page {
+            padding-top: 12rem;
+        }
+
+        .projects-hero {
+            min-height: auto;
+            padding-bottom: 4rem;
+        }
+
+        .projects-hero h1 {
+            margin: 1rem 0;
+            font-size: clamp(4.8rem, 9vw, 8rem);
+            line-height: 0.95;
+        }
+
+        .projects-hero p {
+            max-width: 76rem;
+            color: var(--muted);
+            font-size: 1.8rem;
+        }
+
+        .project-section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .section-lead {
+            max-width: 72rem;
+            color: var(--muted);
+            font-size: 1.6rem;
+            margin-top: -0.4rem;
+        }
+
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .compact-project {
+            min-height: 26rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.8rem;
+            border-radius: var(--radius);
+            background:
+                linear-gradient(180deg, rgba(7, 13, 25, 0.18), rgba(7, 13, 25, 0.94)),
+                var(--project-image);
+            background-size: cover;
+            background-position: center;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .compact-project h3 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .compact-project p {
+            color: var(--muted);
+            font-size: 1.45rem;
+        }
+
+        .project-topline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(151, 255, 155, 0.14);
+            color: var(--accent-3);
+            border: 1px solid rgba(151, 255, 155, 0.28);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .project-status.live {
+            background: rgba(106, 228, 255, 0.14);
+            color: var(--accent);
+            border-color: rgba(106, 228, 255, 0.3);
+        }
+
+        .project-status.progress {
+            background: rgba(255, 231, 99, 0.14);
+            color: #ffe763;
+            border-color: rgba(255, 231, 99, 0.3);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: var(--text);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 1.4rem;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .kn-creations {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
+            color: var(--text);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .kn-creations:hover {
+            color: var(--accent);
+        }
+
+        .featured-project-card {
+            min-height: 100%;
+        }
+
+        .featured-project-card .project-art {
+            min-height: 18rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .projects-page {
+                padding-top: 10rem;
+            }
+
+            .compact-project {
+                min-height: 24rem;
+            }
+        }
+    </style>
+    <script defer src="../script/scroll.js"></script>
+    <script defer src="../portfolio/portfolio.js"></script>
+</head>
+
+<body onload="activly()">
+    <div class="liquid-bg" aria-hidden="true">
+        <div class="liquid liquid-a"></div>
+        <div class="liquid liquid-b"></div>
+        <div class="liquid liquid-c"></div>
+        <div class="liquid liquid-d"></div>
+        <div class="liquid-vignette"></div>
+    </div>
+
+    <header class="header" id="header">
+        <a href="../portfolio/portfolio.html#home" class="logo">Kiran Nandi</a>
+        <span style="font-size:25px;cursor:pointer;color:#f7b7ff;padding:5px 10px;border-radius:999px;"
+            class="hider" onclick="openNav()">&#9776;</span>
+        <nav class="nav" id="nav">
+            <div class="nav-content">
+                <a href="../portfolio/portfolio.html#home" onclick="activly()">Home</a>
+                <a href="../portfolio/portfolio.html#about" onclick="activly()">About</a>
+                <a href="../portfolio/portfolio.html#skills" onclick="activly()">Skills</a>
+                <a href="../portfolio/portfolio.html#experience" onclick="activly()">Experience</a>
+                <a href="../projects/projects.html" class="active" onclick="activly()">Projects</a>
+                <a href="../portfolio/portfolio.html#contact" onclick="activly()">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="overlay" id="navo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="../portfolio/portfolio.html#home" onclick="active()">Home</a>
+            <a href="../portfolio/portfolio.html#about" onclick="active()">About</a>
+            <a href="../portfolio/portfolio.html#skills" onclick="active()">Skills</a>
+            <a href="../portfolio/portfolio.html#experience" onclick="active()">Experience</a>
+            <a href="../projects/projects.html" class="active" onclick="active()">Projects</a>
+            <a href="../portfolio/portfolio.html#contact" onclick="active()">Contact</a>
+        </div>
+    </nav>
+
+    <main class="projects-page">
+        <section class="projects-hero">
+            <p class="eyebrow hidden">Project archive</p>
+            <h1 class="hidden">Projects</h1>
+            <p class="hidden">
+                A mix of resume-grade backend systems, cloud-first builds, Android experiments, and early web projects
+                that shaped the way I approach engineering.
+            </p>
+            <a class="kn-creations hidden" href="https://kncreations.web.app" target="_blank">
+                KN-Creations <i class="fa fa-arrow-right"></i>
+            </a>
+        </section>
+
+        <section class="project-section">
+            <h2 class="heading hidden">Resume <span>Projects</span></h2>
+            <p class="section-lead hidden">
+                These are the strongest projects from my current resume, focused on backend design, REST APIs,
+                security, data modeling, and system maintainability.
+            </p>
+
+            <div class="card-grid project-grid">
+                <article class="project-card featured-project-card animated-shell hidden">
+                    <div class="project-art art-erp">
+                        <span>Java Spring Boot</span>
+                    </div>
+                    <h3>Healthcare ERP - Digital Transformation</h3>
+                    <p>
+                        Multi-module Spring Boot REST API digitizing hospital workflows such as scheduling, billing,
+                        and inventory.
+                    </p>
+                    <ul>
+                        <li>Reduced manual operational overhead by 80%.</li>
+                        <li>Improved complex query execution time by 40% with optimized indexing.</li>
+                        <li>Implemented stateless JWT sessions and RBAC across 6 user roles.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>MySQL</span>
+                        <span>JWT</span>
+                        <span>RBAC</span>
+                    </div>
+                </article>
+
+                <article class="project-card featured-project-card animated-shell hidden">
+                    <div class="project-art art-playgorithm">
+                        <span>DSA Platform</span>
+                    </div>
+                    <h3>Playgorithm</h3>
+                    <p>
+                        Gamified algorithm learning platform with real-time progress tracking, telemetry, and
+                        graph-modeled challenge progression.
+                    </p>
+                    <ul>
+                        <li>Designed and implemented 66 REST APIs for concurrent user sessions.</li>
+                        <li>Modeled 100+ algorithm challenges with DAG-based prerequisite resolution.</li>
+                        <li>Built analytics for attempts, error rates, and time-on-task.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>DSA</span>
+                        <span>Telemetry</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2 class="heading hidden">Earlier <span>Projects</span></h2>
+            <p class="section-lead hidden">
+                These are the projects already present in your portfolio, restyled into the same color theme and card
+                language as the main page.
+            </p>
+
+            <div class="legacy-grid">
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/myport.png');">
+                    <div class="project-topline">
+                        <span class="project-status live">Live</span>
+                    </div>
+                    <div>
+                        <h3>Web Portfolio</h3>
+                        <p>Created a web portfolio using HTML, CSS, and JavaScript.</p>
+                        <a class="project-link" href="../portfolio/portfolio.html">Visit <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/myapp.jpg');">
+                    <div class="project-topline">
+                        <span class="project-status">Done</span>
+                    </div>
+                    <div>
+                        <h3>Todo App</h3>
+                        <p>Android task manager built with Kotlin in Android Studio.</p>
+                        <a class="project-link" href="https://github.com/devinxhacker/MyTasks" target="_blank">View repo <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/mycalci.png');">
+                    <div class="project-topline">
+                        <span class="project-status">Done</span>
+                    </div>
+                    <div>
+                        <h3>Calculator</h3>
+                        <p>Simple calculator built with HTML, CSS, and JavaScript.</p>
+                        <a class="project-link" href="https://kncreations.web.app/Calculator/index.html" target="_blank">Open project <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/disarelief.png');">
+                    <div class="project-topline">
+                        <span class="project-status">Done</span>
+                    </div>
+                    <div>
+                        <h3>DisaRelief</h3>
+                        <p>Disaster management website created as a GDSC Nirman project.</p>
+                        <a class="project-link" href="https://kncreations.web.app/DisaRelief/index.html" target="_blank">Open project <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/chemeasy.png');">
+                    <div class="project-topline">
+                        <span class="project-status live">Live</span>
+                    </div>
+                    <div>
+                        <h3>ChemEasy</h3>
+                        <p>Course project website created for SON coursework.</p>
+                        <a class="project-link" href="https://kncreations.web.app/ChemEasy/index.html" target="_blank">Open project <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/dnapp.jpg');">
+                    <div class="project-topline">
+                        <span class="project-status">Done</span>
+                    </div>
+                    <div>
+                        <h3>Day-Night Flash App</h3>
+                        <p>Flashlight Android app built with Kotlin in Android Studio.</p>
+                        <a class="project-link" href="https://github.com/devinxhacker/Day_Night_Flash_App" target="_blank">View repo <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/periodic_table.png');">
+                    <div class="project-topline">
+                        <span class="project-status">Done</span>
+                    </div>
+                    <div>
+                        <h3>Periodic Table</h3>
+                        <p>Interactive periodic table built with HTML and CSS.</p>
+                        <a class="project-link" href="https://kncreations.web.app/Periodic_table/index.html" target="_blank">Open project <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/pykbc.png');">
+                    <div class="project-topline">
+                        <span class="project-status">Done</span>
+                    </div>
+                    <div>
+                        <h3>Py-KBC</h3>
+                        <p>Quiz game inspired by KBC, built with Python.</p>
+                        <a class="project-link" href="https://github.com/devinxhacker/Py-KBC" target="_blank">View repo <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('https://androidayuda.com/wp-content/uploads/2022/05/WhatsApp-logo.jpg');">
+                    <div class="project-topline">
+                        <span class="project-status progress">In Progress</span>
+                    </div>
+                    <div>
+                        <h3>WhatsApp Clone</h3>
+                        <p>WhatsApp Web clone created using HTML and CSS.</p>
+                        <a class="project-link" href="https://kncreations.web.app/whatsapp/index.html" target="_blank">Open project <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="compact-project animated-shell hidden"
+                    style="--project-image: url('../assets/old/first-gear.png');">
+                    <div class="project-topline">
+                        <span class="project-status live">Live</span>
+                    </div>
+                    <div>
+                        <h3>First Gear</h3>
+                        <p>Digital assistant for first-year students built with HTML and CSS.</p>
+                        <a class="project-link" href="https://first-gear.web.app/index.html" target="_blank">Open project <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="footer-txt">
+            <p>&copy; 2026 - Kiran Nandi | All Rights Reserved.</p>
+        </div>
+        <div class="uparr" id="uparr">
+            <a href="#top" aria-label="Back to top"><img src="../assets/old/uarrow.png" class="uppr" alt="Back to top"></a>
+        </div>
+    </footer>
+    <div class="foot">
+        <div class="layer1">
+            <div class="layer2">
+                <div class="layer3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
