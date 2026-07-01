@@ -1,0 +1,8 @@
+User-agent: *
+
+Allow: /
+
+Disallow: /error/
+Disallow: /test/
+
+Sitemap: https://kirannandi.me/sitemap.xml

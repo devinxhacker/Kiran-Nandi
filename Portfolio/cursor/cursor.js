@@ -21,6 +21,9 @@ class PhysicsEngine {
 
 class CursorEngine {
     constructor() {
+        // Mobile detection
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+        
         this.mouse = { x: 0, y: 0, vx: 0, vy: 0, lastX: 0, lastY: 0 };
         this.core = { x: 0, y: 0 };
         this.outline = { x: 0, y: 0, w: CONFIG.cursorSize, h: CONFIG.cursorSize, r: 50 };
@@ -39,7 +42,7 @@ class CursorEngine {
     }
 
     init() {
-        if (this.isTouchDevice()) {
+        if (this.isTouchDevice() || this.isMobile) {
             this.dom.cursor.style.display = 'none';
             return;
         }
@@ -63,9 +66,9 @@ class CursorEngine {
 
         window.addEventListener('mousedown', () => {
             this.dom.outline.classList.add('cursor-pressed');
-            if (window.ParticleEngine) {
+            if (window.ParticleEngine && window.particleEngineInstance) {
                 const engine = window.particleEngineInstance;
-                if (engine) engine.explode(this.mouse.x, this.mouse.y, '#fff');
+                if (engine && !engine.disabled) engine.explode(this.mouse.x, this.mouse.y, '#fff');
             }
         });
 
@@ -79,7 +82,6 @@ class CursorEngine {
         document.addEventListener('mouseover', (e) => {
             if (e.target.matches(interactives)) {
                 const rect = e.target.getBoundingClientRect();
-                // Instead of matching exact size, we slightly increase the radius based on element size
                 const sizeFactor = Math.max(rect.width, rect.height) * 0.1;
                 this.outline.targetR = 50 + sizeFactor;
                 this.outline.targetW = CONFIG.cursorSize + (sizeFactor * 2);
@@ -122,6 +124,8 @@ class CursorEngine {
 
     startAnimation() {
         let lastTime = 0;
+        let frameCount = 0;
+        
         const animate = (time) => {
             const dt = time - lastTime;
             lastTime = time;
@@ -150,7 +154,7 @@ class CursorEngine {
             this.outline.h = PhysicsEngine.lerp(this.outline.h || CONFIG.cursorSize, this.outline.targetH || CONFIG.cursorSize, CONFIG.morphSpeed);
             this.outline.r = PhysicsEngine.lerp(this.outline.r || 50, this.outline.targetR || 50, CONFIG.morphSpeed);
 
-            // Apply Transforms
+            // Apply Transforms with will-change
             this.dom.core.style.transform = `translate3d(${this.core.x}px, ${this.core.y}px, 0) translate(-50%, -50%)`;
             this.dom.outline.style.transform = `translate3d(${this.outline.x}px, ${this.outline.y}px, 0) translate(-50%, -50%) scale(${stretch}) rotate(${angle}deg)`;
             this.dom.glow.style.transform = `translate3d(${this.glow.x}px, ${this.glow.y}px, 0) translate(-50%, -50%)`;
@@ -159,17 +163,20 @@ class CursorEngine {
             this.dom.outline.style.height = `${this.outline.h}px`;
             this.dom.outline.style.borderRadius = `${this.outline.r}px`;
 
-            // Glow Color Cycle
-            const hue = (Date.now() / 50) % 360;
-            this.dom.glow.style.background = `radial-gradient(circle, hsla(${hue}, 100%, 70%, 0.3) 0%, transparent 70%)`;
+            // Glow Color Cycle - throttle to every 6 frames
+            if (frameCount % 6 === 0) {
+                const hue = (Date.now() / 50) % 360;
+                this.dom.glow.style.background = `radial-gradient(circle, hsla(${hue}, 100%, 70%, 0.3) 0%, transparent 70%)`;
+            }
 
-            // Particles
-            if (window.particleEngineInstance && this.mouse.vx !== 0) {
+            // Particles - only on desktop
+            if (window.particleEngineInstance && !window.particleEngineInstance.disabled && this.mouse.vx !== 0) {
                 const colors = ['#6ae4ff', '#ff7ad9', '#97ff9b', '#ffe763'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 window.particleEngineInstance.createParticle(this.mouse.x, this.mouse.y, color);
             }
 
+            frameCount++;
             requestAnimationFrame(animate);
         };
         requestAnimationFrame(animate);
@@ -180,7 +187,7 @@ class CursorEngine {
 window.addEventListener('DOMContentLoaded', () => {
     window.particleEngineInstance = new ParticleEngine();
     new CursorEngine();
-});
+}, { once: true });
 
 
 const cursor = document.querySelector(".cursor");

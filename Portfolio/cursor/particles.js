@@ -30,10 +30,19 @@ class Particle {
 
 class ParticleEngine {
     constructor() {
+        // Check if device is mobile
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+        this.isLowEnd = navigator.deviceMemory && navigator.deviceMemory < 4;
+        
+        // Disable particles on mobile/low-end devices
+        if (this.isMobile || this.isLowEnd) {
+            this.disabled = true;
+            return;
+        }
+
         this.canvas = document.createElement('canvas');
-        this.ctx = this.canvas.getContext('2d');
+        this.ctx = this.canvas.getContext('2d', { willReadFrequently: false });
         this.particles = [];
-        this.pool = [];
         this.container = document.getElementById('cursor-particles');
         
         if (!this.container) return;
@@ -44,12 +53,14 @@ class ParticleEngine {
         this.canvas.style.zIndex = '9998';
         this.container.appendChild(this.canvas);
 
-        window.addEventListener('resize', () => this.resize());
+        window.addEventListener('resize', () => this.resize(), { passive: true });
         this.resize();
         this.animate();
     }
 
     resize() {
+        if (this.disabled) return;
+        
         this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.canvas.width = this.width * window.devicePixelRatio;
@@ -60,6 +71,8 @@ class ParticleEngine {
     }
 
     createParticle(x, y, color, isExplosion = false) {
+        if (this.disabled) return;
+        
         const velocity = isExplosion 
             ? { x: (Math.random() - 0.5) * 10, y: (Math.random() - 0.5) * 10 }
             : { x: (Math.random() - 0.5) * 2, y: (Math.random() - 0.5) * 2 };
@@ -69,12 +82,16 @@ class ParticleEngine {
     }
 
     explode(x, y, color) {
+        if (this.disabled) return;
+        
         for (let i = 0; i < 25; i++) {
             this.createParticle(x, y, color, true);
         }
     }
 
     animate() {
+        if (this.disabled) return;
+        
         this.ctx.clearRect(0, 0, this.width, this.height);
         
         for (let i = this.particles.length - 1; i >= 0; i--) {

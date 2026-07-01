@@ -65,6 +65,27 @@ body::before {
     cursor:none;
 }
 
+/* Disable expensive animations on mobile */
+@media (max-width: 768px) {
+    .hidden {
+        animation: none !important;
+    }
+    
+    .animated-shell {
+        animation: none !important;
+    }
+    
+    .show {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    /* Simplify liquid background on mobile */
+    .liquid {
+        animation: none !important;
+    }
+}
+
 /* .cursor{
     position:fixed;
     top:0;
@@ -1102,9 +1123,16 @@ section {
     }
 
     .myimg {
+        position:static;
         justify-self: center;
-        width: min(80vw, 40rem);
+        width: min(84vw, 32rem);
+        height: min(40vh, 36rem);
         margin-top: 1rem;
+        border-radius: 50px;
+    }
+
+    .myimg img{
+        object-fit: cover;
     }
 
     .about-grid {
@@ -1115,6 +1143,10 @@ section {
 @media screen and (max-width: 850px) {
     .header {
         padding: 1.2rem 4.5%;
+        background-color: #00000043;
+        left: 2vw;
+        right: 2vw;
+        border: 1px solid white;
     }
 
     .logo {
