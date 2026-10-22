@@ -19,7 +19,7 @@
 	<!-- Primary Meta Tags for SEO -->
 	<meta name="title" content="Kiran Nandi | Java Backend Developer & AWS Cloud Engineer">
 	<meta name="description"
-		content="Kiran Nandi - Computer Engineering student at MITAOE (CGPA 9.05, Top-5 Ranker). Java backend developer, AWS cloud engineer, and Smart India Hackathon 2024 Winner. Specializing in Spring Boot, microservices, and scalable architectures.">
+		content="Kiran Nandi - Computer Engineering student at MITAOE (CGPA 9.04, Top-5 Ranker). Java backend developer, AWS cloud engineer, and Smart India Hackathon 2024 Winner. Specializing in Spring Boot, microservices, and scalable architectures.">
 	<meta name="keywords"
 		content="Kiran Nandi, Java backend developer, AWS cloud engineer, Spring Boot, microservices, computer engineering student, MITAOE, REST APIs, DSA, LeetCode, CodeChef">
 	<meta name="author" content="Kiran Nandi">
@@ -34,7 +34,7 @@
 	<meta property="og:url" content="https://kirannandi.me/">
 	<meta property="og:title" content="Kiran Nandi | Java Backend Developer & AWS Cloud Engineer">
 	<meta property="og:description"
-		content="Kiran Nandi - Smart India Hackathon 2024 Winner. Java backend developer specializing in Spring Boot, AWS, and microservices. Computer Engineering student at MITAOE with 9.05/10 CGPA.">
+		content="Kiran Nandi - Smart India Hackathon 2024 Winner. Java backend developer specializing in Spring Boot, AWS, and microservices. Computer Engineering student at MITAOE with 9.04/10 CGPA.">
 	<meta property="og:image" content="https://kirannandi.me/assets/kiran1.jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
@@ -124,9 +124,7 @@
 
 	<link rel="stylesheet" href="style.css">
 	<script defer src="portfolio.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-		integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 	<link rel="icon" type="image/png" href="logo.png">
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -136,13 +134,27 @@
 		window.addEventListener('load', function () {
 			particlesJS('particles-js', {
 				particles: {
-					number: { value: 300 },
+					number: { value: 150, density: { enable: true, value_area: 800 } },
 					color: { value: ['#0331fa', '#04aa81', '#ffffff'] },
 					shape: { type: 'circle' },
-					size: { value: 4, random: true },
-					move: { enable: true, speed: 2 },
-					line_linked: { enable: true }
-				}
+					size: { value: 3, random: true },
+					move: { enable: true, speed: 2, direction: 'none', out_mode: 'out' },
+					line_linked: { enable: true, distance: 150, color: '#0331fa', opacity: 0.4, width: 1 },
+					bubble: { enable: false },
+					interactivity: {
+						detect_on: 'canvas',
+						events: {
+							onhover: { enable: true, mode: 'grab' },
+							onclick: { enable: true, mode: 'push' },
+							resize: true
+						},
+						modes: {
+							grab: { distance: 200, line_linked: { opacity: 0.6 } },
+							push: { particles_nb: 4 }
+						}
+					}
+				},
+				retina_detect: true
 			});
 		});
 	</script>
@@ -151,61 +163,54 @@
 
 
 <body>
+	<div id="particles-js"></div>
 	<div class="cursor-container">
 		<div class="my-cursor"></div>
 		<div class="outer-circle"></div>
 	</div>
 
-
-
-	<!-- <h3>Personal Home Page</h3> -->
 	<div class="content" id="home">
-		<center>
+		<div class="profile-card">
 			<header>
-				<img src="assets/kiran1.jpeg" alt="Kiran Nandi - Java Backend Developer and AWS Cloud Engineer"
-					loading="lazy" decoding="async" class="image" />
+				<div class="image-wrapper">
+					<img src="assets/kiran1.jpeg" alt="Kiran Nandi - Java Backend Developer and AWS Cloud Engineer"
+						loading="lazy" decoding="async" class="image" />
+				</div>
 				<h1 class="kiran">Kiran Nandi</h1>
-				<p>Computer Engineering Student | Java Backend Developer | AWS Cloud Engineer</p>
+				<p class="tagline">Computer Engineering Student | Java Backend Developer | AWS Cloud Engineer</p>
 
-				<hr style="width: 15%;box-shadow: 0 5px 5px rgba(0, 0, 0, 0.258);" size="5" color="white">
+				<hr class="divider">
 
-				<div class="sosm">
-					<p>
-						<a href="https://www.linkedin.com/in/kiran-nandi-in/" target="_blank" class="btn"><i
-								class="fa-brands fa-linkedin"></i></a>
-						<a href="https://github.com/devinxhacker" target="_blank" class="btn"><i
-								class="fa-brands fa-github"></i></a>
-						<a href="https://x.com/kirannandi896" target="_blank" class="btn"><i
-								class="fa-brands fa-twitter"></i></a>
-						<a href="https://www.instagram.com/kiran_nandi896/" target="_blank" class="btn"><i
-								class="fa-brands fa-instagram"></i></a>
-						<a href="https://www.facebook.com/profile.php?id=61561376609998" target="_blank" class="btn"><i
-								class="fa-brands fa-facebook"></i></a>
-						<a href="https://t.me/+918530431501" target="_blank" class="btn"><i
-								class="fa-brands fa-telegram"></i></a>
-				</div>
-				<div class="sos">
-					<p>
-						<a href="https://wa.me/+918530431501" target="_blank" class="btn"><i
-								class="fa-brands fa-whatsapp"></i></a>
-						<a href="mailto:kirannandi896@gmail" target="_blank" class="btn"><i
-								class="fa fa-envelope"></i></a>
-						<a href="tel:+918530431501" target="_blank" class="btn"><i class="fa fa-phone"></i></a>
-					</p>
+				<div class="social-grid">
+					<a href="https://www.linkedin.com/in/kiran-nandi-in/" target="_blank" class="social-btn"><i
+						class="fa-brands fa-linkedin"></i></a>
+					<a href="https://github.com/devinxhacker" target="_blank" class="social-btn"><i
+						class="fa-brands fa-github"></i></a>
+					<a href="https://x.com/kirannandi896" target="_blank" class="social-btn"><i
+						class="fa-brands fa-twitter"></i></a>
+					<a href="https://www.instagram.com/kiran_nandi896/" target="_blank" class="social-btn"><i
+						class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.facebook.com/profile.php?id=61561376609998" target="_blank" class="social-btn"><i
+						class="fa-brands fa-facebook"></i></a>
+					<a href="https://t.me/+918530431501" target="_blank" class="social-btn"><i
+						class="fa-brands fa-telegram"></i></a>
+					<a href="https://wa.me/+918530431501" target="_blank" class="social-btn"><i
+						class="fa-brands fa-whatsapp"></i></a>
+					<a href="mailto:kirannandi896@gmail" target="_blank" class="social-btn"><i
+						class="fa fa-envelope"></i></a>
+					<a href="tel:+918530431501" target="_blank" class="social-btn"><i class="fa fa-phone"></i></a>
 				</div>
 
-				<div class="portm">
-					<div class="portm_hack">
-						<a href="portfolio/portfolio.html" class="btn" target="_self">
-							Portfolio <i class="fa fa-arrow-right"></i>
-						</a>
-					</div>
+				<div class="portm-container">
+					<a href="portfolio/portfolio.html" class="portfolio-btn" target="_self">
+						Portfolio <i class="fa fa-arrow-right"></i>
+					</a>
 				</div>
-
-
 			</header>
-			<br><br><br><br><br><br><br><br><br>
-			<footer id="footer" onclick="window.open('https://kncreations.web.app', '_blank')"></footer>
+		</div>
+		<footer id="footer" onclick="window.open('https://kncreations.web.app', '_blank')"></footer>
+	</div>
+
 </body>
 
 </html>
